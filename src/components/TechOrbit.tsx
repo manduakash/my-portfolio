@@ -236,7 +236,7 @@ export default function TechOrbit() {
                         <TechPlanet key={i} {...p} />
                     ))}
 
-                    <EffectComposer disableNormalPass>
+                    <EffectComposer enableNormalPass={false}>
                         <BloomController />
                     </EffectComposer>
                 </Suspense>
