@@ -303,7 +303,7 @@ export default function Home() {
       </footer>
 
       <div className="pb-10 text-center text-[10px] text-slate-600 font-bold uppercase tracking-[0.5em]">
-        © 2025 Vyoma Innovus Engineering • Synchronized
+        © 2025 My Official Portfolio • Synchronized
       </div>
 
       <style jsx global>{`
