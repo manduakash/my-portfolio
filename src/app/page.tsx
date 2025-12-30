@@ -1,8 +1,9 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
-import { Github, Linkedin, Mail, ArrowRight, ExternalLink, Code2, Monitor, MapPin } from "lucide-react";
+import { Github, Linkedin, Mail, ArrowRight, ExternalLink, Code2, Monitor, MapPin, Instagram, Phone } from "lucide-react";
 import Link from "next/link";
+import { FaWhatsapp } from "react-icons/fa";
 
 // Data Imports
 import { PROFILE, PROJECTS } from "@/data/mock";
@@ -10,6 +11,7 @@ import Terminal from "@/components/Terminal";
 import Timeline from "@/components/Timeline";
 import TechOrbit from "@/components/TechOrbit";
 import Achievements from "@/components/Achievements";
+import Image from "next/image";
 
 // --- Sub-Component: Static Tailwind Background ---
 const Background = () => (
@@ -157,11 +159,15 @@ export default function Home() {
                 </button>
               </MagneticButton>
               <div className="flex gap-3">
-                {[Github, Linkedin, Mail].map((Icon, i) => (
-                  <Link key={i} href="#" className="p-3.5 bg-slate-800/50 border border-slate-700 rounded-xl hover:text-sky-400 transition-all backdrop-blur-sm">
-                    <Icon size={20} />
-                  </Link>
-                ))}
+                <Link href={PROFILE.socials[0].link} className="p-3.5 bg-slate-800/50 border border-slate-700 rounded-xl hover:text-sky-400 transition-all backdrop-blur-sm">
+                  <Github size={20} />
+                </Link>
+                <Link href={PROFILE.socials[1].link} className="p-3.5 bg-slate-800/50 border border-slate-700 rounded-xl hover:text-sky-400 transition-all backdrop-blur-sm">
+                  <Linkedin size={20} />
+                </Link>
+                <Link href={PROFILE.email} className="p-3.5 bg-slate-800/50 border border-slate-700 rounded-xl hover:text-sky-400 transition-all backdrop-blur-sm">
+                  <Mail size={20} />
+                </Link>
               </div>
             </div>
           </motion.div>
@@ -240,7 +246,7 @@ export default function Home() {
         </div>
 
         <div className="flex gap-8 overflow-x-auto px-6 pb-20 pt-10 no-scrollbar scroll-smooth">
-          {PROJECTS.slice(0, 4).map((project, i) => (
+          {PROJECTS.slice(0, 5).map((project, i) => (
             <motion.div
               key={i}
               whileHover={{ y: -10 }}
@@ -294,9 +300,45 @@ export default function Home() {
             <Link href={`mailto:${PROFILE.email}`} className="text-2xl font-bold text-white hover:text-sky-400 transition-colors block underline decoration-sky-500 decoration-2 underline-offset-8">
               {PROFILE.email}
             </Link>
+            <p>{PROFILE.location}</p>
+
             <div className="flex gap-4 pt-10">
-              <Link href="#" className="p-4 bg-slate-800 rounded-full hover:bg-sky-500 transition-all text-white"><Github /></Link>
-              <Link href="#" className="p-4 bg-slate-800 rounded-full hover:bg-sky-500 transition-all text-white"><Linkedin /></Link>
+              <Link
+                href={PROFILE.socials[0].link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-14 h-14 flex items-center justify-center rounded-full bg-[#181717] text-white shadow-lg transition-all duration-300 hover:scale-110 hover:bg-[#24292f]"
+              >
+                <Github className="w-7 h-7" />
+              </Link>
+
+              <Link
+                href={PROFILE.socials[1].link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-14 h-14 flex items-center justify-center rounded-full bg-[#0A66C2] text-white shadow-lg transition-all duration-300 hover:scale-110 hover:bg-[#004182]"
+              >
+                <Linkedin className="w-7 h-7" />
+              </Link>
+
+              <Link
+                href={PROFILE.socials[2].link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-14 h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-[#F58529] via-[#DD2A7B] to-[#515BD4] text-white shadow-lg transition-all duration-300 hover:scale-110"
+              >
+                <Instagram className="w-7 h-7" />
+              </Link>
+
+              <Link
+                href={PROFILE.socials[3].link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-14 h-14 flex items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-all duration-300 hover:scale-110 hover:bg-[#20b954]"
+              >
+                <FaWhatsapp className="w-7 h-7" />
+              </Link>
+
             </div>
           </div>
         </div>

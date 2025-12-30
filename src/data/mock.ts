@@ -6,12 +6,18 @@ export const PROFILE = {
   bio: "Specializing in building scalable distributed systems and high-performance web applications. Architecting the future at Vyoma Innovus.",
   skills: ["Next.js", "TypeScript", "Node.js", "React", "WebSocket", "MongoDB", "Redux", "Three.js", "Git", "Java", "AWS", "JavaScript", "Angular", "Bootstrap", "React Native", "JQuery", "PHP", "CodeIgniter", "Laravel", "MySQL"],
   email: "manduakash@gmail.com",
-  phone: "+91 6202734737",
+  phone: "6202734737",
   location: "Kolkata, India",
   qualifications: [
     { degree: "B.Tech in Computer Science", year: "2022", uni: "MAKAUT, WB (formerly known as West Bengal University of Technology)", link: "https://www.makautexam.net/" },
     { degree: "Advance Java (Data Structure & Algorithm)", year: "2022-23", uni: "Anudip Foundation, Danlop Branch, West Bengal", link: "https://anudip.org/" },
     { degree: "Full Stack Web Development (Angular & Java)", year: "2023", uni: "Anudip Foundation, Danlop Branch, West Bengal", link: "https://anudip.org/" },
+  ],
+  socials: [
+    { name: "Github", link: "https://github.com/manduakash" },
+    { name: "LinkedIn", link: "https://www.linkedin.com/in/akash-singh-3349b1184" },
+    { name: "Instagram", link: "https://www.instagram.com/_akash_._singh_" },
+    { name: "WhatsApp", link: "https://wa.me/6202734737" },
   ]
 };
 
@@ -19,85 +25,137 @@ export const PROJECTS = [
   {
     id: 1,
     title: "Yatri Suvidha (Petropole)",
-    description: "Digital slot booking system for international passengers at ICP Petrapole, ensuring faster cross-border clearance.",
-    detailed_description: "A high-performance Enterprise Resource Planning system for manufacturing giants.",
+    description: "A digital slot booking platform developed to streamline international passenger movement at ICP Petrapole, ensuring efficient scheduling and faster cross-border clearance.",
+    detailed_description: "Yatri Suvidha is a government-facing web application designed to manage and regulate the flow of international passengers at the Integrated Check Post (ICP), Petrapole. The system enables online slot booking, validation, and monitoring, significantly reducing congestion and manual intervention. It supports role-based access, secure data handling, and real-time status tracking to improve operational efficiency and passenger experience.",
     client: "Land Port Authority of India",
     company: "Vyoma Innovus Global Pvt. Ltd.",
     link: "https://yatrisuvidha.wb.gov.in/",
-    image: "/gallery/yatri_suvidha/thumnail.png"
+    image: "/gallery/yatri_suvidha/thumnail.png",
+    technologies: ["PHP", "CodeIgniter", "MySQL", "HTML", "CSS", "JavaScript", "Bootstrap", "JQuery", "SVN (Rabbit)"],
+    timeline: "2023 - Present"
   },
   {
     id: 2,
     title: "Passport Verification (WB)",
-    description: "Security-first software utilized by all police stations in West Bengal to process passport applicant background checks.",
-    detailed_description: "Real-time crypto analytics dashboard with sub-second latency updates.",
+    description: "A security-focused digital system used by police stations across West Bengal for background verification of passport applicants.",
+    detailed_description: "The Passport Verification system provides a centralized and secure platform for police authorities to process passport verification requests. It enables seamless coordination between police stations and supervisory offices, supports real-time status updates, and ensures strict data confidentiality while improving verification accuracy and processing timelines.",
     client: "STF (Special Task Force) & Department of IT, (Govt. of WB)",
     company: "Vyoma Innovus Global Pvt. Ltd.",
     link: "https://wbpassportverify.link/",
-    image: "/gallery/passport/img_2.png"
+    image: "/gallery/passport/img_2.png",
+    technologies: ["Next.js", "TypeScript", "Node.js", "Redis", "Redux", "Git", "AWS (S3 & EC2)", "ShadCN", "MySQL"],
+    timeline: "2025 - Present"
   },
   {
     id: 3,
     title: "E-Sakshya",
-    description: "The eSakshya software is a pivotal mobile application designed to assist police in recording and managing evidence in criminal cases.",
-    detailed_description: "eSakshya is an ICJS initiative to streamline the management of legal processes through electronic means, enhancing efficiency and transparency in judicial operations and designed to assist police in recording and managing evidence in criminal cases. The eSakshya is a comprehensive suite featuring both a web portal and a mobile application, developed in accordance with the latest three criminal laws established by the BNS. The mobile application enables the real-time capture of video and images of evidence and witnesses. This system enhances the process of evidence collection, preservation, and verification, ensuring its integrity.",
+    description: "A mobile and web-based digital evidence management system designed to assist police in recording, preserving, and managing evidence in criminal cases.",
+    detailed_description: "eSakshya is an ICJS-aligned digital solution developed to modernize evidence collection and management in accordance with the latest criminal laws under the Bharatiya Nyaya Sanhita (BNS). The platform comprises a secure web portal and a mobile application that enables real-time capture of videos and images of evidence and witnesses, ensuring integrity, traceability, and transparency throughout the judicial process.",
     client: "Department of Information & Techology (Govt. of WB)",
     company: "Vyoma Innovus Global Pvt. Ltd.",
     link: "https://wbesakshya.wb.gov.in/",
-    image: "/projects/eshakshya.png"
+    image: "/projects/eshakshya.png",
+    technologies: ["React.js", "Javascript", "Java", "Spring Boot", "Redux", "Git", "AWS (S3 & EC2)", "MySQL"],
+    timeline: "2025 - Present"
   },
   {
     id: 4,
     title: "Taruner Swapno",
-    description: "Taruner Swapno is one of the educational reform schemes of the West Bengal Government. The main objective is to facilitate students in connecting their studies with technology.",
-    detailed_description: "Taruner Swapno is a web application designed to assist students in connecting their studies with technology. The application provides a platform for students to access educational resources, such as videos, articles, and assignments, and to engage in interactive learning activities. The application is built using the latest web technologies and is designed to be user-friendly and accessible to all students.",
+    description: "A government initiative aimed at digitally empowering students by integrating technology into the education ecosystem.",
+    detailed_description: "Taruner Swapno is a web-based application developed to support the West Bengal Government’s educational reform initiative. The platform enables eligible students to digitally access and complete self-declaration processes, facilitating the distribution of technology-enabled benefits. The system is designed to be user-friendly, secure, and accessible, ensuring wide adoption across the student community.",
     company: "Vyoma Innovus Global Pvt. Ltd.",
     client: "Department of Education (Govt. of WB)",
-    link: "#",
-    image: "/gallery/taruner_swapno/img (3).png"
+    link: "https://selfdeclaration.wb.gov.in/",
+    image: "/gallery/taruner_swapno/img (3).png",
+    technologies: ["Next.js", "TypeScript", "Java", "Spring Boot", "Redux", "Git", "ShadCN", "MySQL"],
+    timeline: "2025 - Present"
   },
   {
     id: 5,
     title: "Sanjukta Portal",
-    description: "SANGJUKTA is an integrated, single-sign-on platform developed by West Bengal Police.",
-    detailed_description: "SANGJUKTA is an integrated, single-sign-on platform developed by West Bengal Police to unify multiple police applications such as PCC, All Arrest, BDDS, LIMS, Court Monitoring System, and others. It provides a centralized dashboard where users can access information from all applications through one login.",
+    description: "An integrated single sign-on platform developed to unify multiple police applications under a centralized dashboard.",
+    detailed_description: "SANGJUKTA is a unified digital platform developed for West Bengal Police to integrate multiple operational applications such as PCC, All Arrest, BDDS, LIMS, and Court Monitoring Systems. The platform provides a centralized dashboard with single sign-on access, enabling seamless data sharing, improved monitoring, and enhanced operational efficiency.",
     company: "Vyoma Innovus Global Pvt. Ltd.",
     client: "West Bengal Police & Department of IT",
-    link: "http://superdashboard.wbapplication.link/",
-    image: "/projects/superdashboard.png"
+    link: "https://superdashboard.wbapplication.link/",
+    image: "/projects/superdashboard.png",
+    technologies: ["Next.js", "TypeScript", "Java", "Spring Boot", "Redux", "Git", "ShadCN", "MySQL"],
+    timeline: "2025 - Present"
   },
   {
     id: 6,
     title: "e-Report (Monthly DO)",
-    description: "SANGJUKTA is an integrated, single-sign-on platform developed by West Bengal Police.",
-    detailed_description: "SANGJUKTA is an integrated, single-sign-on platform developed by West Bengal Police to unify multiple police applications such as PCC, All Arrest, BDDS, LIMS, Court Monitoring System, and others. It provides a centralized dashboard where users can access information from all applications through one login.",
+    description: "A digital reporting system developed for generating and reviewing consolidated Monthly District Officer (DO) reports for West Bengal Police.",
+    detailed_description: "The e-Report system enables police stations to enter monthly operational data across departments such as Crime, Traffic, CID, IB, and RO. Reports are reviewed and verified at district and higher hierarchical levels, including SP, DIG, IG, and DGP, ensuring standardized reporting, data accuracy, and streamlined administrative oversight.",
     company: "Vyoma Innovus Global Pvt. Ltd.",
     client: "West Bengal Police & Department of IT",
-    link: "http://superdashboard.wbapplication.link/",
-    image: "/projects/superdashboard.png"
+    link: "https://ereport.wb.gov.in/",
+    image: "/projects/ereport.png",
+    technologies: ["JSP", "Bootstrap", "Java", "Spring Boot", "JQuery", "SVN (Tortoise)", "Javascript", "MySQL"],
+    timeline: "2024 - Present"
   },
   {
     id: 7,
     title: "Police Clearance Certificate",
-    description: "Sustainability tracking app used by 50k+ daily active users.",
-    detailed_description: "Sustainability tracking app used by 50k+ daily active users.",
+    description: "An official digital system for issuance of Police Clearance Certificates to certify an individual’s criminal background status.",
+    detailed_description: "The PCC application enables citizens to apply for Police Clearance Certificates through a secure digital platform. The system facilitates verification by police authorities, ensures compliance with regulatory requirements, and supports certificate issuance for purposes such as immigration, employment, and foreign residency.",
     company: "Vyoma Innovus Global Pvt. Ltd.",
     client: "Department of Information & Techology (Govt. of WB)",
-    link: "#",
-    image: "https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?q=80&w=800&auto=format&fit=crop"
+    link: "https://pcc.wb.gov.in/",
+    image: "/projects/pcc.png",
+    technologies: ["PHP", "Laravel", "MySQL", "HTML", "CSS", "JavaScript", "Bootstrap", "JQuery", "SVN (Rabbit)"],
+    timeline: "2023 - Present"
   },
   {
     id: 8,
+    title: "Webel IT & ITES NOC V1 & V2 (ongoing)",
+    description: "A comprehensive online system enabling leasing and renting of WEBEL properties to IT, ITeS, and commercial organizations with UDIN-based certification.",
+    detailed_description: "This application facilitates end-to-end digital processing for leasing and renting of WEBEL-owned and leased properties. It supports multiple rental scenarios, secure company login using GSTIN and PAN, online document submission, fee calculation, and approval workflows. All issued certificates, NOCs, and permissions are generated with UDIN of West Bengal, ensuring authenticity, transparency, and auditability.",
+    company: "Vyoma Innovus Global Pvt. Ltd.",
+    client: "Webel & Department of IT (Govt. of WB)",
+    link: "https://anumati-itewb.wb.gov.in/",
+    image: "/projects/itites.png",
+    technologies: ["PHP", "Laravel", "MySQL", "HTML", "CSS", "JavaScript", "Bootstrap", "JQuery", "SVN (Rabbit)"],
+    timeline: "2023 - Present"
+  },
+  {
+    id: 9,
     title: "Pending Challan Management System",
-    description: "SANJOG, unified portal for your pending challan information & dispose! Pay Your Pending Challan Authority/PUCC Login",
-    detailed_description: "Sust/ainability tracking app used by 50k+ daily active users.",
+    description: "A unified government portal for viewing, managing, and disposing of pending traffic challans.",
+    detailed_description: "SANJOG provides a centralized digital platform for citizens and authorities to view pending challans, process payments, and manage disposal workflows. The system improves transparency, reduces manual processing, and enables efficient coordination between enforcement agencies.",
     company: "Vyoma Innovus Global Pvt. Ltd.",
     client: "Department of Transport (Govt. of WB)",
     link: "https://sanjog.wb.gov.in/",
-    image: "/projects/sanjog.png"
+    image: "/projects/sanjog.png",
+    technologies: ["JSP", "Bootstrap", "Java", "Spring Boot", "JQuery", "SVN (Tortoise)", "Javascript", "MySQL"],
+    timeline: "2023 - Present"
   },
-
+  {
+    id: 10,
+    title: "Street Vendors (Hawkers)",
+    description: "A government-authorized digital certification system for identification and rehabilitation of registered street vendors.",
+    detailed_description: "This platform enables Aadhaar-based verification of street vendors identified by authorized agencies. Upon verification and annual fee payment, vendors are issued UDIN-based digital certificates, ensuring authenticity, regulatory compliance, and streamlined rehabilitation under government policies.",
+    company: "Vyoma Innovus Global Pvt. Ltd.",
+    client: "KMC (Kolkata Municipal Corp.) & Department of IT (WB)",
+    link: "https://streetvendor.wb.gov.in/cov",
+    image: "/projects/streetvendor.png",
+    technologies: ["Next.js", "TypeScript", "Java", "Spring Boot", "Redux", "Git", "ShadCN", "MySQL"],
+    timeline: "2025 - Present"
+  },
+  {
+    id: 11,
+    title: "All Arrest V1 & V2",
+    description: "An Aadhaar-based digital arrest register system for real-time management of arrestee records.",
+    detailed_description: "The All Arrest system provides police authorities with a centralized platform to digitally record, verify, and manage arrest information. It supports Aadhaar-based validation, real-time reporting, and hierarchical access controls, enhancing accuracy, transparency, and accountability in arrest-related data management.",
+    company: "Vyoma Innovus Global Pvt. Ltd.",
+    client: "Department of Transport (Govt. of WB)",
+    link: "https://allarrest.wb.gov.in/",
+    image: "/projects/allarrest.png",
+    technologies: ["PHP", "Laravel", "MySQL", "HTML", "CSS", "JavaScript", "Bootstrap", "JQuery", "SVN (Rabbit)"],
+    timeline: "2023 - Present"
+  }
 ];
+
 
 export const EXPERIENCE = [
   {
@@ -106,8 +164,19 @@ export const EXPERIENCE = [
     company: "Vyoma Innovus Pvt. Ltd.",
     role: "Senior Software Developer",
     duration: "2023 - Present",
-    description: "Leading the core product team to architect scalable microservices and high-performance React applications. Reduced system latency by 40%.",
-    skills: ["Next.js", "Node.js", "React.js", "React Native", "Express.js", "Spring Boot", "PHP", "AWS", "JAVA"]
+    description:
+      "Designing and developing scalable web and mobile applications using Next.js, React.js, React Native, and Node.js. Leading feature development, API integrations, and backend services with Express.js, Spring Boot, and PHP. Actively involved in performance optimization, cloud deployment on AWS, and mentoring junior developers to ensure clean architecture and maintainable codebases.",
+    skills: [
+      "Next.js",
+      "Node.js",
+      "React.js",
+      "React Native",
+      "Express.js",
+      "Spring Boot",
+      "PHP",
+      "AWS",
+      "Java"
+    ]
   },
   {
     id: 2,
@@ -115,19 +184,38 @@ export const EXPERIENCE = [
     company: "Anudip Foundations (Kolkata Branch)",
     role: "Full Stack Intern",
     duration: "2023 (4 Months)",
-    description: "Developed and maintained internal dashboard tools. Optimized SQL queries which improved data retrieval speed by 25%.",
-    skills: ["Angular", "Spring Boot", "JSP", "Restful API", "MySql", "Web Developement"]
+    description:
+      "Worked on full-stack application development using Angular for frontend and Spring Boot for backend services. Built RESTful APIs, integrated JSP-based modules, and managed MySQL databases. Improved application performance by optimizing SQL queries and contributed to internal dashboard development and maintenance.",
+    skills: [
+      "Angular",
+      "Spring Boot",
+      "JSP",
+      "RESTful API",
+      "MySQL",
+      "Web Development"
+    ]
   },
   {
     id: 3,
     type: "Training",
     company: "Anudip",
     role: "Advanced Java & Data Structure Trainee",
-    duration: "2022-23 (6 Months)",
-    description: "Intensive training on AWS services, Docker orchestration, and CI/CD pipeline automation.",
-    skills: ["Java Basics", "Advance Java", "Data Structure","Git", "APIs", "HTML", "CSS", "JavaScript"]
+    duration: "2022 - 2023 (6 Months)",
+    description:
+      "Completed intensive training in Core Java, Advanced Java, and Data Structures with hands-on implementation. Gained practical experience in API development, version control using Git, and foundational web technologies. Strengthened problem-solving skills and understanding of application architecture through real-world coding exercises.",
+    skills: [
+      "Java Basics",
+      "Advanced Java",
+      "Data Structure",
+      "Git",
+      "APIs",
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ]
   }
 ];
+
 
 export const ACHIEVEMENTS = [
   {

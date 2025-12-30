@@ -94,7 +94,7 @@ export default function ProjectDetail() {
                             <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
                                 <CheckCircle className="text-sky-500" size={24} /> Project Overview
                             </h2>
-                            <p className="text-xl leading-relaxed text-slate-400 font-light">
+                            <p className="text-xl leading-relaxed text-slate-400 font-light text-justify">
                                 {project.detailed_description}
                             </p>
                         </div>
@@ -118,7 +118,7 @@ export default function ProjectDetail() {
                                 <label className="text-[10px] font-bold text-slate-500 uppercase tracking-widest flex items-center gap-2 mb-2">
                                     <Calendar size={14} /> Timeline
                                 </label>
-                                <p className="text-white font-bold">2023 - Present</p>
+                                <p className="text-white font-bold">{project.timeline}</p>
                             </div>
                         </div>
                     </div>
@@ -131,7 +131,7 @@ export default function ProjectDetail() {
                             Focused on minimizing latency and maximizing user engagement through intuitive UI patterns.
                         </p>
                         <div className="flex flex-wrap gap-3">
-                            {["Next.js", "Tailwind CSS", "Node.js", "PostgreSQL"].map((tech) => (
+                            {project?.technologies?.map((tech) => (
                                 <span key={tech} className="px-4 py-2 bg-slate-800/50 border border-slate-700 rounded-lg text-xs font-bold text-white">
                                     {tech}
                                 </span>
