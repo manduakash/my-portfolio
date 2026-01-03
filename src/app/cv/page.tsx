@@ -5,14 +5,31 @@ import {
     Linkedin, Download, Printer, ExternalLink,
     Award, Briefcase, GraduationCap, Code2,
     ArrowLeft,
-    Instagram
+    Instagram,
+    ExternalLinkIcon,
+    Cpu,
+    Palette,
+    Plane,
+    ChefHat,
+    Music,
+    Dumbbell,
+    Sparkles
 } from "lucide-react";
-import { PROFILE, PROJECTS, EXPERIENCE, ACHIEVEMENTS } from "@/data/mock";
+import { PROFILE, PROJECTS, EXPERIENCE, ACHIEVEMENTS, HOBBIES } from "@/data/mock";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa";
 
 export default function CVPage() {
+    const ICON_MAP: Record<string, React.ElementType> = {
+        tech: Cpu,
+        uiux: Palette,
+        travel: Plane,
+        cooking: ChefHat,
+        music: Music,
+        gym: Dumbbell
+    };
+
     const printRef = useRef<HTMLDivElement>(null);
 
     const handlePrint = () => {
@@ -77,7 +94,7 @@ export default function CVPage() {
 
                 <div className="grid grid-cols-12 gap-10">
                     {/* --- Left Column (Sidebar) --- */}
-                    <aside className="col-span-4 space-y-8 border-r border-slate-100 pr-6">
+                    <aside className="col-span-4 space-y-12 border-r border-slate-100 pr-6">
 
                         {/* Skills */}
                         <section>
@@ -96,7 +113,7 @@ export default function CVPage() {
                         {/* Education */}
                         <section>
                             <h2 className="text-xs font-black uppercase tracking-[0.2em] text-slate-400 mb-4 flex items-center gap-2">
-                                <GraduationCap size={14} /> Education
+                                <GraduationCap size={14} /> Qualifications
                             </h2>
                             <div className="space-y-4">
                                 {PROFILE.qualifications.map((q, i) => (
@@ -115,8 +132,33 @@ export default function CVPage() {
                             </div>
                         </section>
 
+                        {/* Hobbies */}
+                        <section>
+                            <h3 className="text-xs font-black uppercase tracking-[0.2em] text-slate-400 mb-4 flex items-center gap-2">
+                                <Sparkles size={14} /> More Than Just Code
+                            </h3>
+
+                            <div className="grid grid-cols-1 gap-2">
+                                {HOBBIES.map((s, index) => {
+                                    const Icon = ICON_MAP[s.icon];
+
+                                    return (
+                                        <div
+                                            key={index}
+                                            title={s.description}
+                                            className="text-[11px] text-slate-500 hover:text-sky-600 flex items-center gap-2 transition-colors"
+                                        >
+                                            {Icon && <Icon size={14} className="opacity-70" />}
+                                            {s.title}
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        </section>
+
+
                         {/* Socials */}
-                        <section className="print:hidden">
+                        <section className="">
                             <h2 className="text-xs font-black uppercase tracking-[0.2em] text-slate-400 mb-4 flex items-center gap-2"><Globe size={14} /> Social</h2>
                             <div className="grid grid-cols-1 gap-2">
                                 {PROFILE.socials.map((s) => (
@@ -178,16 +220,16 @@ export default function CVPage() {
                         </section>
 
                         {/* Major Projects (Concise for CV) */}
-                        <section>
+                        <section className="pt-5">
                             <h2 className="text-xs font-black uppercase tracking-[0.2em] text-slate-400 mb-6 flex items-center gap-2">
                                 <Code2 size={14} /> Key Projects
                             </h2>
                             <div className="grid grid-cols-1 gap-4">
                                 {PROJECTS.slice(0, 5).map((project) => (
-                                    <div key={project.id} className="group border-b border-slate-50 pb-4">
+                                    <a href={project.link} key={project.id} className="group border-b border-slate-50 pb-4">
                                         <div className="flex justify-between items-center mb-1">
                                             <h4 className="text-sm font-bold text-slate-900 flex flex-col">
-                                                <span>{project.title}</span>
+                                                <span className="underline group-hover:text-sky-600 flex items-center gap-1">{project.title}<ExternalLinkIcon size={12} /></span>
                                                 <span className="text-[9px] text-slate-400 font-normal">{project.client}</span>
                                             </h4>
                                             <span className="text-[10px] font-mono text-slate-400">{project.timeline}</span>
@@ -200,7 +242,7 @@ export default function CVPage() {
                                                 </span>
                                             ))}
                                         </div>
-                                    </div>
+                                    </a>
                                 ))}
                                 <p className="text-[10px] text-slate-400 italic mt-2 text-center">
                                     + {PROJECTS.length - 5} more large scale government applications managed.

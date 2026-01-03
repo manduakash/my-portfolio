@@ -2,10 +2,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { PROFILE, PROJECTS } from "@/data/mock";
+import { Copy, Dice1, LaptopMinimal, Maximize2, Minus, Square, X } from "lucide-react";
+import { Button } from "./ui/button";
 
 export default function Terminal() {
     const [displayText, setDisplayText] = useState("");
     const containerRef = useRef<HTMLDivElement>(null);
+    const bodyRef = useRef<HTMLDivElement>(null);
 
     // 1. Plain Text Source (No HTML tags here)
     const fullCode = `const developer = {
@@ -78,8 +81,27 @@ export default developer;`;
         });
     };
 
+    const handleClose = () => {
+        bodyRef.current?.classList.add("hidden");
+    }
+
+    const showTerminal = () => {
+        bodyRef.current?.classList.remove("hidden");
+    }
+
+    const handleMinimize = () => {
+        containerRef.current?.classList.add("h-[150px]");
+        containerRef.current?.classList.remove("h-[550px]");
+    }
+
+    const handleMaximize = () => {
+        containerRef.current?.classList.remove("h-[150px]");
+        containerRef.current?.classList.add("h-[550px]");
+    }
+
     return (
-        <motion.div
+        <><motion.div
+            ref={bodyRef}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="bg-[#0d1117] border border-[#30363d] rounded-lg overflow-hidden shadow-2xl w-full lg:max-w-5xl mx-auto font-mono text-[14px]"
@@ -87,9 +109,10 @@ export default developer;`;
             {/* GitHub Style Header */}
             <div className="bg-[#161b22] px-5 py-3 flex justify-between items-center border-b border-[#30363d]">
                 <div className="flex gap-2">
-                    <div className="w-3 h-3 rounded-full bg-[#ff5f56]" />
-                    <div className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
-                    <div className="w-3 h-3 rounded-full bg-[#27c93f]" />
+                    <button onClick={handleClose} className="w-3 h-3 rounded-full bg-[#ff5f56] text-[#ff5f56] group flex justify-center items-center" ><X className="group-hover:text-slate-900" size={10} /></button>
+                    <button onClick={handleMinimize} className="w-3 h-3 rounded-full bg-[#ffbd2e] text-[#ffbd2e] group flex justify-center items-center" ><Minus className="group-hover:text-slate-900" size={10} /></button>
+                    <button onClick={handleMaximize} className="w-3 h-3 rounded-full bg-[#27c93f] text-[#27c93f] group flex justify-center items-center" ><LaptopMinimal className="group-hover:text-slate-900 font-bold" size={10} /></button>
+
                 </div>
                 <span className="text-[#8b949e] text-[10px] uppercase tracking-widest font-bold">profile.js</span>
             </div>
@@ -128,5 +151,8 @@ export default developer;`;
                 </div>
             </div>
         </motion.div>
+            {bodyRef.current?.classList.contains("hidden") && <Button className="cursor-pointer text-slate-50 hover:text-slate-500 border rounded-lg hover:bg-slate-50" onClick={showTerminal}>Show Terminal</Button>}
+        </>
+
     );
 }

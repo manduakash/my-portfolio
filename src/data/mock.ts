@@ -2,8 +2,8 @@ export const PROFILE = {
   name: "Akash Singh",
   role: "Senior Software Developer",
   company: "Vyoma Innovus Global Pvt. Ltd.",
-  experience: "3+ Years",
-  bio: "Results-driven Senior Developer with over 3 years of experience in building enterprise-grade web and mobile applications. Proven track record in designing scalable system architectures and leading technical implementations for complex platforms serving millions of users.",
+  experience: "4 Years",
+  bio: "Results-driven Senior Developer with over 4 years of experience in building enterprise-grade web and mobile applications. Proven track record in designing scalable system architectures and leading technical implementations for complex platforms serving millions of users.",
   skills: ["Next.js", "TypeScript", "Node.js", "React", "WebSocket", "MongoDB", "Redux", "Three.js", "Git", "Java", "AWS", "JavaScript", "Angular", "Bootstrap", "React Native", "JQuery", "PHP", "CodeIgniter", "Laravel", "MySQL"],
   email: "manduakash@gmail.com",
   phone: "6202734737",
@@ -145,7 +145,7 @@ export const PROJECTS = [
   },
   {
     id: 11,
-    title: "All Arrest V1 & V2",
+    title: "All Arrest V2",
     description: "An Aadhaar-based digital arrest register system for real-time management of arrestee records.",
     detailed_description: "The All Arrest system provides police authorities with a centralized platform to digitally record, verify, and manage arrest information. It supports Aadhaar-based validation, real-time reporting, and hierarchical access controls, enhancing accuracy, transparency, and accountability in arrest-related data management.",
     company: "Vyoma Innovus Global Pvt. Ltd.",
@@ -153,10 +153,9 @@ export const PROJECTS = [
     link: "https://allarrest.wb.gov.in/",
     image: "/projects/allarrest.png",
     technologies: ["PHP", "Laravel", "MySQL", "HTML", "CSS", "JavaScript", "Bootstrap", "JQuery", "SVN (Rabbit)"],
-    timeline: "2023 - Present"
+    timeline: "2025 - Present"
   }
 ];
-
 
 export const EXPERIENCE = [
   {
@@ -184,7 +183,7 @@ export const EXPERIENCE = [
     type: "Internship",
     company: "Anudip Foundations (Kolkata Branch)",
     role: "Full Stack Intern",
-    duration: "2023 (4 Months)",
+    duration: "2022 - 2023 (4 Months)",
     description:
       "Worked on full-stack application development using Angular for frontend and Spring Boot for backend services. Built RESTful APIs, integrated JSP-based modules, and managed MySQL databases. Improved application performance by optimizing SQL queries and contributed to internal dashboard development and maintenance.",
     skills: [
@@ -201,7 +200,7 @@ export const EXPERIENCE = [
     type: "Training",
     company: "Anudip",
     role: "Advanced Java & Data Structure Trainee",
-    duration: "2022 - 2023 (6 Months)",
+    duration: "2022 (6 Months)",
     description:
       "Completed intensive training in Core Java, Advanced Java, and Data Structures with hands-on implementation. Gained practical experience in API development, version control using Git, and foundational web technologies. Strengthened problem-solving skills and understanding of application architecture through real-world coding exercises.",
     skills: [
@@ -217,13 +216,12 @@ export const EXPERIENCE = [
   }
 ];
 
-
 export const ACHIEVEMENTS = [
   {
     id: 1,
     title: "Yatri Subidha Portal",
     subtitle: "Land Port Authority of India (LPAI)",
-    date: "March 2021",
+    date: "June-July 2023",
     description: "Digital slot booking system for international passengers at ICP Petrapole, ensuring faster cross-border clearance.",
     detailedStory: "Tasked by the Land Port Authority of India, I developed the 'Yatri Subidha' portal to solve massive congestion at the Indo-Bangladesh border. The system allows passengers to book arrival/departure slots, integrating health and customs checks into a single digital flow. It successfully reduced manual processing time by over 70%.",
     image: "/yatri_suvidha_feature.jpeg",
@@ -249,7 +247,7 @@ export const ACHIEVEMENTS = [
     id: 2,
     title: "Passport Verification System",
     subtitle: "West Bengal Police Infrastructure",
-    date: "June 2022",
+    date: "February-March 2025",
     description: "Security-first software utilized by all police stations in West Bengal to process passport applicant background checks.",
     detailedStory: "This mission-critical application was designed for the West Bengal Police to digitize the physical verification process. It connects every police station in the state to a central server, allowing officers to submit verification reports instantly via secure channels, cutting down the passport issuance cycle significantly.",
     image: "/passport_verification_2.png",
@@ -269,7 +267,7 @@ export const ACHIEVEMENTS = [
     id: 3,
     title: "Taruner Swapno: Digital Reform",
     subtitle: "Department of Education, West Bengal",
-    date: "January 2023",
+    date: "July-August 2025",
     description: "Massive-scale verification platform for 300,000+ students to receive digital grants for learning devices.",
     detailedStory: "As part of a major educational reform, I engineered the verification engine for 'Taruner Swapno'. The system processed bank and identity credentials for over 3 lakh students to facilitate a ₹10,000 grant. This required high-concurrency architecture to handle massive registration spikes without downtime.",
     image: "/taruner_swapno.jpeg",
@@ -291,7 +289,7 @@ export const ACHIEVEMENTS = [
     id: 4,
     title: "Durga Puja Bandhu App",
     subtitle: "Official Kolkata Police Companion",
-    date: "October 2023",
+    date: "October 2025",
     description: "High-traffic mobile companion for Bengal’s biggest festival with 50k+ downloads and real-time navigation.",
     detailedStory: "Developed for the Kolkata Police to manage millions of visitors during Durga Puja. The app features real-time pandal crowd updates, emergency SOS buttons, and GPS-based route maps. It maintained 99.9% uptime during the 5-day peak period with over 50k active users.",
     image: "/gallery/puja_bondhu/img_1.png",
@@ -307,9 +305,9 @@ export const ACHIEVEMENTS = [
   },
   {
     id: 5,
-    title: "Dedicated Employee of the Year",
+    title: "Dedicated Employee Award",
     subtitle: "Vyoma Innovus Excellence Award",
-    date: "December 2024",
+    date: "April 2024",
     description: "Recognized for technical leadership, architectural excellence, and mentoring teams at Vyoma Innovus.",
     detailedStory: "Received the top honors at Vyoma Innovus Global for consistently delivering high-quality architectural solutions. I was specifically recognized for migrating our core legacy systems to a modern microservices architecture and for mentoring junior engineers into senior roles.",
     image: "/vig_award.jpeg",
@@ -320,3 +318,43 @@ export const ACHIEVEMENTS = [
     stats: { label: "Team Velocity", value: "+40%" }
   }
 ];
+
+export const HOBBIES = [
+  {
+    title: "Learning New Technologies",
+    icon: "tech",
+    description: "Exploring modern tools, frameworks, and best practices to stay up to date in the tech ecosystem.",
+    image: "/images/hobbies/tech.png"
+  },
+  {
+    title: "UI/UX Exploration",
+    icon: "uiux",
+    description: "Designing intuitive interfaces and improving user experience through research and experimentation.",
+    image: "/images/hobbies/uiux.png"
+  },
+  {
+    title: "Traveling",
+    icon: "travel",
+    description: "Visiting new places, understanding different cultures, and gaining fresh perspectives.",
+    image: "/images/hobbies/travel.png"
+  },
+  {
+    title: "Cooking",
+    icon: "cooking",
+    description: "Experimenting with recipes and flavors to create enjoyable homemade meals.",
+    image: "/images/hobbies/cooking.png"
+  },
+  {
+    title: "Guitar",
+    icon: "music",
+    description: "Playing guitar to relax, improve creativity, and enjoy music in free time.",
+    image: "/images/hobbies/guitar.png"
+  },
+  {
+    title: "Gym",
+    icon: "gym",
+    description: "Maintaining physical fitness and discipline through regular workouts and training.",
+    image: "/images/hobbies/gym.png"
+  }
+];
+

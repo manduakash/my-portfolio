@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
-import { Github, Linkedin, Mail, ArrowRight, ExternalLink, Code2, Monitor, MapPin, Instagram, Phone } from "lucide-react";
+import { Github, Linkedin, Mail, ArrowRight, ExternalLink, Code2, Monitor, MapPin, Instagram, Phone, Loader2 } from "lucide-react";
 import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa";
 
@@ -12,7 +12,10 @@ import Timeline from "@/components/Timeline";
 import TechOrbit from "@/components/TechOrbit";
 import Achievements from "@/components/Achievements";
 import Image from "next/image";
-
+import Hobbies from "@/components/Hobbies";
+import confetti from "canvas-confetti";
+import { fireConfetti } from "@/components/fireConfetti";
+import { useRouter } from "next/navigation";
 // --- Sub-Component: Static Tailwind Background ---
 const Background = () => (
   <div className="fixed inset-0 -z-10 bg-[#0b1120] overflow-hidden">
@@ -60,8 +63,23 @@ export default function Home() {
   const [isExpanded, setIsExpanded] = useState(false);
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, { stiffness: 400, damping: 30 });
-
+  const navigate = useRouter();
   const profileImg = "/pic.png";
+  const [isLoading, setIsLoading] = useState(false);
+
+
+  const handleViewCV = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setIsLoading(true)
+    // 4, 6, 8
+    fireConfetti(7, rect, e);
+
+    setTimeout(() => {
+      setIsLoading(false);
+      navigate.push("/cv");
+    }, 4000);
+
+  };
 
   return (
     <main className="relative min-h-screen text-slate-400 selection:bg-sky-500/30 font-sans antialiased overflow-x-hidden">
@@ -99,9 +117,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           <Link href="/" className="font-bold text-white text-lg tracking-tight flex items-center gap-2">
             <Code2 className="text-green-600" size={20} />
-            {PROFILE.name.toUpperCase()}
+            {PROFILE.name.toUpperCase().replace(" ", "_")}.dev
           </Link>
           <div className="flex gap-8 items-center text-xs font-bold uppercase tracking-widest">
+            <Link href="/cv" className="hover:text-sky-400 transition-colors">Download CV</Link>
             <Link href="#work" className="hover:text-sky-400 transition-colors">Experience</Link>
             <MagneticButton>
               <Link href="/contact" className="px-4 py-2 bg-sky-500 text-white rounded-lg hover:bg-sky-400 transition-all shadow-lg shadow-sky-500/20">
@@ -116,7 +135,9 @@ export default function Home() {
       <section className="pt-44 pb-20 px-6 max-w-[90%] mx-auto min-h-screen flex items-center">
         <div className="grid lg:grid-cols-2 gap-20 items-center w-full">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            {/* Identity Block with Hover Effect */}
+
+
+
             <div className="flex items-center gap-5 mb-10">
               <div
                 className="relative group cursor-zoom-in"
@@ -134,30 +155,27 @@ export default function Home() {
                 {isExpanded && <div className="w-20 h-20" />}
               </div>
               <div>
-                <h3 className="text-white font-bold text-xl tracking-tight">{PROFILE.name}</h3>
-                <p className="text-green-400 text-xs font-mono uppercase tracking-[0.2em]">{PROFILE.role}</p>
+                <div className="inline-flex items-center gap-2 px-2 py-1 rounded-full border border-sky-500/20 bg-sky-500/10 text-sky-400 text-xs font-bold mb-0">
+                  <Monitor size={14} /> Available for Senior Roles
+                </div>
+                <h3 className="text-white text-xl tracking-tight">My name is <span className="text-white font-bold">{PROFILE.name}</span></h3>
+                <p className="text-green-400 text-xs font-mono uppercase tracking-[0.2em]">and I'm a {PROFILE.role}</p>
               </div>
-            </div>
-
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-sky-500/20 bg-sky-500/10 text-sky-400 text-xs font-bold mb-8">
-              <Monitor size={14} /> Available for Senior Roles
             </div>
 
             <h1 className="text-6xl md:text-8xl font-extrabold text-white leading-[1.05] tracking-tighter mb-8">
               CRAFTING <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-indigo-400">DIGITAL CORE.</span>
             </h1>
 
-            <p className="text-lg text-slate-400 max-w-xl mb-12 leading-relaxed font-light">
-              Senior Software Developer at <span className="text-white">{PROFILE.company}</span>.
-              Engineering high-performance, distributed architectures with a focus on reliability.
+            <p className="text-lg text-slate-400 max-w-xl mb-12 leading-tight text-justify font-light">
+              Results-driven Senior Developer at <span className="text-white">{PROFILE.company}</span> with over {PROFILE.experience} of experience in building enterprise-grade web and mobile applications. Proven track record in designing scalable system architectures and leading technical implementations for complex platforms serving millions of users.
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <MagneticButton>
-                <button className="bg-white text-slate-900 px-8 py-3.5 rounded-xl font-bold flex items-center gap-2 hover:bg-sky-50 transition-all shadow-xl text-sm">
-                  View Experience <ArrowRight size={18} />
-                </button>
-              </MagneticButton>
+
+              <button disabled={isLoading} onClick={(e) => handleViewCV(e)} className="bg-white disabled:bg-white/50 text-slate-900 px-8 py-3.5 rounded-xl font-bold flex items-center gap-2 hover:bg-sky-50 transition-all shadow-xl text-sm">
+                Download CV {isLoading ? <Loader2 size={18} className="animate-spin" /> : <ArrowRight size={18} />}
+              </button>
               <div className="flex gap-3">
                 <Link href={PROFILE.socials[0].link} className="p-3.5 bg-slate-800/50 border border-slate-700 rounded-xl hover:text-sky-400 transition-all backdrop-blur-sm">
                   <Github size={20} />
@@ -272,6 +290,9 @@ export default function Home() {
       </section>
 
       <Achievements />
+
+      <Hobbies />
+
 
       {/* Experience / Footer Section */}
       <footer className="py-32 max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 border-t border-slate-800">
