@@ -1,15 +1,16 @@
 export const PROFILE = {
   name: "Akash Singh",
   role: "Senior Software Developer",
-  company: "Vyoma Innovus Pvt. Ltd.",
+  company: "Vyoma Innovus Global Pvt. Ltd.",
   experience: "3+ Years",
-  bio: "Specializing in building scalable distributed systems and high-performance web applications. Architecting the future at Vyoma Innovus.",
+  bio: "Results-driven Senior Developer with over 3 years of experience in building enterprise-grade web and mobile applications. Proven track record in designing scalable system architectures and leading technical implementations for complex platforms serving millions of users.",
   skills: ["Next.js", "TypeScript", "Node.js", "React", "WebSocket", "MongoDB", "Redux", "Three.js", "Git", "Java", "AWS", "JavaScript", "Angular", "Bootstrap", "React Native", "JQuery", "PHP", "CodeIgniter", "Laravel", "MySQL"],
   email: "manduakash@gmail.com",
   phone: "6202734737",
   location: "Kolkata, India",
+  portfolioLink: "https://my-portfolio-two-peach-23.vercel.app/",
   qualifications: [
-    { degree: "B.Tech in Computer Science", year: "2022", uni: "MAKAUT, WB (formerly known as West Bengal University of Technology)", link: "https://www.makautexam.net/" },
+    { degree: "B.Tech in Computer Science", year: "2018-2022", uni: "MAKAUT, WB (formerly known as West Bengal University of Technology)", link: "https://www.makautexam.net/" },
     { degree: "Advance Java (Data Structure & Algorithm)", year: "2022-23", uni: "Anudip Foundation, Danlop Branch, West Bengal", link: "https://anudip.org/" },
     { degree: "Full Stack Web Development (Angular & Java)", year: "2023", uni: "Anudip Foundation, Danlop Branch, West Bengal", link: "https://anudip.org/" },
   ],
@@ -39,7 +40,7 @@ export const PROJECTS = [
     title: "Passport Verification (WB)",
     description: "A security-focused digital system used by police stations across West Bengal for background verification of passport applicants.",
     detailed_description: "The Passport Verification system provides a centralized and secure platform for police authorities to process passport verification requests. It enables seamless coordination between police stations and supervisory offices, supports real-time status updates, and ensures strict data confidentiality while improving verification accuracy and processing timelines.",
-    client: "STF (Special Task Force) & Department of IT, (Govt. of WB)",
+    client: "STF (Special Task Force) & Department of IT",
     company: "Vyoma Innovus Global Pvt. Ltd.",
     link: "https://wbpassportverify.link/",
     image: "/gallery/passport/img_2.png",
@@ -160,8 +161,8 @@ export const PROJECTS = [
 export const EXPERIENCE = [
   {
     id: 1,
-    type: "Work",
-    company: "Vyoma Innovus Pvt. Ltd.",
+    type: "Currently Serving",
+    company: "Vyoma Innovus Global Pvt. Ltd.",
     role: "Senior Software Developer",
     duration: "2023 - Present",
     description:
@@ -310,7 +311,7 @@ export const ACHIEVEMENTS = [
     subtitle: "Vyoma Innovus Excellence Award",
     date: "December 2024",
     description: "Recognized for technical leadership, architectural excellence, and mentoring teams at Vyoma Innovus.",
-    detailedStory: "Received the top honors at Vyoma Innovus for consistently delivering high-quality architectural solutions. I was specifically recognized for migrating our core legacy systems to a modern microservices architecture and for mentoring junior engineers into senior roles.",
+    detailedStory: "Received the top honors at Vyoma Innovus Global for consistently delivering high-quality architectural solutions. I was specifically recognized for migrating our core legacy systems to a modern microservices architecture and for mentoring junior engineers into senior roles.",
     image: "/vig_award.jpeg",
     tag: "Excellence Award",
     links: [
