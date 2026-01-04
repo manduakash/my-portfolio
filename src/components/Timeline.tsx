@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { EXPERIENCE } from "@/data/mock";
-import { Briefcase, GraduationCap, Award, Calendar, DotIcon, ClockFading } from "lucide-react";
+import { Briefcase, GraduationCap, Award, Calendar, DotIcon, ClockFading, ExternalLink } from "lucide-react";
 import { RiRadioButtonLine } from "react-icons/ri";
 import { GoDotFill } from "react-icons/go";
 
@@ -60,7 +60,7 @@ export default function Timeline() {
                                     <h3 className="text-2xl font-bold text-white group-hover:text-sky-400 transition-colors">
                                         {item.role}
                                     </h3>
-                                    <p className="text-slate-200 font-medium mb-2">{item.company}</p>
+                                    <p className="flex items-baseline gap-2 text-slate-200 font-medium mb-2">{item.company} <a href={item.site || "#"} className="flex gap-1 justify-center items-center text-slate-500 text-sm hover:underline hover:text-blue-600">visit <ExternalLink size={12} /></a></p>
 
                                     <div className="flex items-center gap-2 text-slate-500 text-sm mb-4 font-mono">
                                         <Calendar size={14} />
