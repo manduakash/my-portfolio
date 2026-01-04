@@ -4,11 +4,13 @@ import { motion } from "framer-motion";
 import { PROFILE, PROJECTS } from "@/data/mock";
 import { Copy, Dice1, LaptopMinimal, Maximize2, Minus, Square, X } from "lucide-react";
 import { Button } from "./ui/button";
+import { GoDotFill } from "react-icons/go";
 
 export default function Terminal() {
     const [displayText, setDisplayText] = useState("");
     const containerRef = useRef<HTMLDivElement>(null);
     const bodyRef = useRef<HTMLDivElement>(null);
+    const [isVisible, setIsVisible] = useState(true);
 
     // 1. Plain Text Source (No HTML tags here)
     const fullCode = `const developer = {
@@ -82,11 +84,11 @@ export default developer;`;
     };
 
     const handleClose = () => {
-        bodyRef.current?.classList.add("hidden");
+        setIsVisible(false);
     }
 
     const showTerminal = () => {
-        bodyRef.current?.classList.remove("hidden");
+        setIsVisible(true);
     }
 
     const handleMinimize = () => {
@@ -104,7 +106,7 @@ export default developer;`;
             ref={bodyRef}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="bg-[#0d1117] border border-[#30363d] rounded-lg overflow-hidden shadow-2xl w-full lg:max-w-5xl mx-auto font-mono text-[14px]"
+            className={`${isVisible ? "" : "hidden"} bg-[#0d1117] border border-[#30363d] rounded-lg overflow-hidden shadow-2xl w-full lg:max-w-5xl mx-auto font-mono text-[14px]`}
         >
             {/* GitHub Style Header */}
             <div className="bg-[#161b22] px-5 py-3 flex justify-between items-center border-b border-[#30363d]">
@@ -146,12 +148,12 @@ export default developer;`;
                     <span>UTF-8</span>
                 </div>
                 <div className="flex items-center gap-1">
-                    <div className="w-2 h-2 rounded-full bg-[#238636]" />
+                    <GoDotFill size={10} className="text-emerald-300 animate-caret-blink m-0 p-0 ml-1" />
                     <span>Connected</span>
                 </div>
             </div>
         </motion.div>
-            {bodyRef.current?.classList.contains("hidden") && <Button className="cursor-pointer text-slate-50 hover:text-slate-500 border rounded-lg hover:bg-slate-50" onClick={showTerminal}>Show Terminal</Button>}
+            {!isVisible && <Button className="cursor-pointer text-slate-50 hover:text-slate-500 border rounded-lg hover:bg-slate-50" onClick={showTerminal}>Show Terminal</Button>}
         </>
 
     );

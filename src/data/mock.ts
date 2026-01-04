@@ -164,6 +164,7 @@ export const EXPERIENCE = [
     company: "Vyoma Innovus Global Pvt. Ltd.",
     role: "Senior Software Developer",
     duration: "2023 - Present",
+    site: "https://www.vyomainnovusglobal.com/",
     description:
       "Designing and developing scalable web and mobile applications using Next.js, React.js, React Native, and Node.js. Leading feature development, API integrations, and backend services with Express.js, Spring Boot, and PHP. Actively involved in performance optimization, cloud deployment on AWS, and mentoring junior developers to ensure clean architecture and maintainable codebases.",
     skills: [
@@ -181,9 +182,10 @@ export const EXPERIENCE = [
   {
     id: 2,
     type: "Internship",
-    company: "Anudip Foundations (Kolkata Branch)",
+    company: "Anudip Foundations (Dunlop, Kolkata)",
     role: "Full Stack Intern",
     duration: "2022 - 2023 (4 Months)",
+    site: "https://anudip.org/",
     description:
       "Worked on full-stack application development using Angular for frontend and Spring Boot for backend services. Built RESTful APIs, integrated JSP-based modules, and managed MySQL databases. Improved application performance by optimizing SQL queries and contributed to internal dashboard development and maintenance.",
     skills: [
@@ -198,9 +200,10 @@ export const EXPERIENCE = [
   {
     id: 3,
     type: "Training",
-    company: "Anudip",
+    company: "Anudip (Kolkata Branch)",
     role: "Advanced Java & Data Structure Trainee",
     duration: "2022 (6 Months)",
+    site: "https://anudip.org",
     description:
       "Completed intensive training in Core Java, Advanced Java, and Data Structures with hands-on implementation. Gained practical experience in API development, version control using Git, and foundational web technologies. Strengthened problem-solving skills and understanding of application architecture through real-world coding exercises.",
     skills: [

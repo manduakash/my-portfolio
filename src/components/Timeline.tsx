@@ -2,7 +2,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { EXPERIENCE } from "@/data/mock";
-import { Briefcase, GraduationCap, Award, Calendar } from "lucide-react";
+import { Briefcase, GraduationCap, Award, Calendar, DotIcon, ClockFading } from "lucide-react";
+import { RiRadioButtonLine } from "react-icons/ri";
+import { GoDotFill } from "react-icons/go";
 
 export default function Timeline() {
     return (
@@ -30,12 +32,14 @@ export default function Timeline() {
                             {/* Central Node */}
                             <div className="absolute left-1/2 transform -translate-x-1/2 z-10 hidden md:flex items-center justify-center">
                                 <div className="w-10 h-10 rounded-full bg-[#0b1120] border border-sky-500/50 flex items-center justify-center shadow-[0_0_15px_rgba(14,165,233,0.3)]">
-                                    {item.type === "Work" ? (
-                                        <Briefcase size={16} className="text-sky-400" />
+                                    {item.type === "Currently Serving" ? (
+                                        <Briefcase size={16} className="text-emerald-400" />
+                                    ) : item.type === "Served" ? (
+                                        <ClockFading size={16} className="text-indigo-400" />
                                     ) : item.type === "Internship" ? (
-                                        <GraduationCap size={16} className="text-indigo-400" />
+                                        <GraduationCap size={16} className="text-amber-400" />
                                     ) : (
-                                        <Award size={16} className="text-emerald-400" />
+                                        <Award size={16} className="text-sky-400" />
                                     )}
                                 </div>
                             </div>
@@ -44,11 +48,13 @@ export default function Timeline() {
                             <div className="w-full md:w-[45%]">
                                 <div className="p-8 bg-slate-900/40 border border-slate-800 rounded-3xl backdrop-blur-sm hover:border-sky-500/30 transition-all group relative">
                                     {/* Subtle Type Badge */}
-                                    <span className={`text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full border mb-4 inline-block ${item.type === "Work" ? "text-sky-400 border-sky-500/20 bg-sky-500/5" :
-                                            item.type === "Internship" ? "text-indigo-400 border-indigo-500/20 bg-indigo-500/5" :
-                                                "text-emerald-400 border-emerald-500/20 bg-emerald-500/5"
+                                    <span className={`text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full border mb-4 inline-flex justify-center items-center w-auto ${item.type === "Work" ? "text-sky-400 border-sky-500/20 bg-sky-500/5" :
+                                        item.type === "Currently Serving" ? "text-emerald-400 border-emerald-500/20 bg-emerald-500/5" :
+                                            item.type === "Served" ? "text-indigo-400 border-indigo-500/20 bg-indigo-500/5" :
+                                                item.type === "Internship" ? "text-amber-400 border-amber-500/20 bg-amber-500/5" :
+                                                    "text-sky-400 border-sky-500/20 bg-sky-500/5"
                                         }`}>
-                                        {item.type}
+                                        {item.type} {item.type === "Currently Serving" && <GoDotFill size={10} className="text-emerald-200 animate-caret-blink m-0 p-0 ml-1" />}
                                     </span>
 
                                     <h3 className="text-2xl font-bold text-white group-hover:text-sky-400 transition-colors">

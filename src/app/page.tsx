@@ -72,7 +72,7 @@ export default function Home() {
     const rect = e.currentTarget.getBoundingClientRect();
     setIsLoading(true)
     // 4, 6, 8
-    fireConfetti(7, rect, e);
+    fireConfetti(11, rect, e);
 
     setTimeout(() => {
       setIsLoading(false);
@@ -164,7 +164,7 @@ export default function Home() {
             </div>
 
             <h1 className="text-6xl md:text-8xl font-extrabold text-white leading-[1.05] tracking-tighter mb-8">
-              CRAFTING <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-indigo-400">DIGITAL CORE.</span>
+              CRAFTING <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-indigo-600">DIGITAL CORE.</span>
             </h1>
 
             <p className="text-lg text-slate-400 max-w-xl mb-12 leading-tight text-justify font-light">
@@ -202,8 +202,8 @@ export default function Home() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-sky-500/5 blur-[150px] rounded-full pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-6 mb-20 text-center">
-          <h2 className="text-green-600 font-bold text-xs tracking-[0.4em] uppercase mb-4">// Professional Path</h2>
-          <h3 className="text-5xl font-bold text-white tracking-tighter">My Journey</h3>
+          <h2 className="text-green-600 font-bold text-xs tracking-[0.4em] uppercase mb-4">// Professional Timeline</h2>
+          <h3 className="text-5xl font-bold text-white tracking-tighter">Journey So Far</h3>
         </div>
 
         <Timeline />
