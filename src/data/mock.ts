@@ -327,37 +327,38 @@ export const HOBBIES = [
     title: "Learning New Technologies",
     icon: "tech",
     description: "Exploring modern tools, frameworks, and best practices to stay up to date in the tech ecosystem.",
-    image: "/images/hobbies/tech.png"
+    image: "/hobbies/tech.jpg"
   },
   {
     title: "UI/UX Exploration",
     icon: "uiux",
     description: "Designing intuitive interfaces and improving user experience through research and experimentation.",
-    image: "/images/hobbies/uiux.png"
+    image: "/hobbies/uiux.jpg"
   },
   {
     title: "Traveling",
     icon: "travel",
     description: "Visiting new places, understanding different cultures, and gaining fresh perspectives.",
-    image: "/images/hobbies/travel.png"
-  },
-  {
-    title: "Cooking",
-    icon: "cooking",
-    description: "Experimenting with recipes and flavors to create enjoyable homemade meals.",
-    image: "/images/hobbies/cooking.png"
+    image: "/hobbies/travel.png"
   },
   {
     title: "Guitar",
     icon: "music",
     description: "Playing guitar to relax, improve creativity, and enjoy music in free time.",
-    image: "/images/hobbies/guitar.png"
+    image: "/hobbies/guitar.png"
   },
   {
     title: "Gym",
     icon: "gym",
     description: "Maintaining physical fitness and discipline through regular workouts and training.",
-    image: "/images/hobbies/gym.png"
-  }
+    image: "/hobbies/gym.jpg"
+  },
+  {
+    title: "Cooking",
+    icon: "cooking",
+    description: "Experimenting with recipes and flavors to create enjoyable homemade meals.",
+    image: "/hobbies/cooking.jpg"
+  },
 ];
+
 

@@ -2,51 +2,36 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Compass, Cpu, Palette, Utensils, Music, Dumbbell } from "lucide-react";
+import { HOBBIES } from "@/data/mock";
 
-const hobbies = [
-    {
-        title: "Learning New Technologies",
-        description: "Exploring modern tools, frameworks, and best practices to stay up to date in the tech ecosystem.",
-        image: "/hobbies/tech.jpg",
-        icon: <Cpu size={20} />,
-        span: "md:col-span-1 md:row-span-1",
-    },
-    {
-        title: "UI/UX Exploration",
-        description: "Designing intuitive interfaces and research.",
-        image: "/hobbies/uiux.jpg",
-        icon: <Palette size={20} />,
-        span: "md:col-span-1 md:row-span-1", // Large horizontal card
-    },
-    {
-        title: "Traveling",
-        description: "Visiting new places and gaining fresh perspectives.",
-        image: "/hobbies/travel.png",
-        icon: <Compass size={20} />,
-        span: "md:col-span-1 md:row-span-2",
-    },
-    {
-        title: "Guitar",
-        description: "Playing guitar to relax and improve creativity.",
-        image: "/hobbies/guitar.png",
-        icon: <Music size={20} />,
-        span: "md:col-span-1 md:row-span-2",
-    },
-    {
-        title: "Gym",
-        description: "Maintaining physical fitness and discipline through regular training.",
-        image: "/hobbies/gym.jpg",
-        icon: <Dumbbell size={20} />,
-        span: "md:col-span-1 md:row-span-2", // Vertical tall card
-    },
-    {
-        title: "Cooking",
-        description: "Experimenting with recipes to create enjoyable homemade meals.",
-        image: "/hobbies/cooking.jpg",
-        icon: <Utensils size={20} />,
-        span: "md:col-span-1 md:row-span-1", // Large horizontal card
-    },
-];
+const ICON_MAP: Record<string, React.ElementType> = {
+    tech: Cpu,
+    uiux: Palette,
+    travel: Compass,
+    music: Music,
+    gym: Dumbbell,
+    cooking: Utensils,
+};
+
+const SPAN_MAP: Record<string, string> = {
+    tech: "md:col-span-1 md:row-span-1",
+    uiux: "md:col-span-1 md:row-span-1",
+    travel: "md:col-span-1 md:row-span-2",
+    music: "md:col-span-1 md:row-span-2",
+    gym: "md:col-span-1 md:row-span-2",
+    cooking: "md:col-span-1 md:row-span-1",
+};
+
+const hobbies = HOBBIES.map((hobby) => {
+    const Icon = ICON_MAP[hobby.icon];
+
+    return {
+        ...hobby,
+        icon: Icon ? <Icon size={20} /> : null,
+        span: SPAN_MAP[hobby.icon] ?? "md:col-span-1 md:row-span-1",
+    };
+});
+
 
 export default function Hobbies() {
     return (
