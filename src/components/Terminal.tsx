@@ -102,57 +102,101 @@ export default developer;`;
     }
 
     return (
-        <><motion.div
-            ref={bodyRef}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className={`${isVisible ? "" : "hidden"} bg-[#0d1117] border border-[#30363d] rounded-lg overflow-hidden shadow-2xl w-full lg:max-w-5xl mx-auto font-mono text-[14px]`}
-        >
-            {/* GitHub Style Header */}
-            <div className="bg-[#161b22] px-5 py-3 flex justify-between items-center border-b border-[#30363d]">
-                <div className="flex gap-2">
-                    <button onClick={handleClose} className="w-3 h-3 rounded-full bg-[#ff5f56] text-[#ff5f56] group flex justify-center items-center" ><X className="group-hover:text-slate-900" size={10} /></button>
-                    <button onClick={handleMinimize} className="w-3 h-3 rounded-full bg-[#ffbd2e] text-[#ffbd2e] group flex justify-center items-center" ><Minus className="group-hover:text-slate-900" size={10} /></button>
-                    <button onClick={handleMaximize} className="w-3 h-3 rounded-full bg-[#27c93f] text-[#27c93f] group flex justify-center items-center" ><LaptopMinimal className="group-hover:text-slate-900 font-bold" size={10} /></button>
-
-                </div>
-                <span className="text-[#8b949e] text-[10px] uppercase tracking-widest font-bold">profile.js</span>
-            </div>
-
-            {/* Editor Content */}
-            <div
-                ref={containerRef}
-                className="p-8 h-[550px] overflow-y-auto no-scrollbar bg-[#0d1117]"
+        <>
+            <motion.div
+                ref={bodyRef}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+                className={`
+        ${isVisible ? "block" : "hidden"}
+        bg-[#0d1117]
+        border border-[#30363d]
+        rounded-lg
+        overflow-hidden
+        shadow-2xl
+        w-full
+        max-w-[95vw] sm:max-w-[90vw] lg:max-w-5xl
+        mx-auto
+        font-mono
+        text-[12px] sm:text-[13px] lg:text-[14px]
+      `}
             >
-                {displayText.split("\n").map((line, i) => (
-                    <div key={i} className="flex gap-6 leading-relaxed">
-                        <span className="text-[#484f58] w-8 select-none text-right shrink-0">{i + 1}</span>
-                        <span
-                            className="whitespace-pre text-[#c9d1d9]"
-                            dangerouslySetInnerHTML={{ __html: highlightCode(line) }}
+                {/* Header */}
+                <div className="bg-[#161b22] px-3 sm:px-5 py-2 sm:py-3 flex justify-between items-center border-b border-[#30363d]">
+                    <div className="flex gap-2">
+                        <button
+                            onClick={handleClose}
+                            className="w-3 h-3 rounded-full bg-[#ff5f56]"
+                        />
+                        <button
+                            onClick={handleMinimize}
+                            className="w-3 h-3 rounded-full bg-[#ffbd2e]"
+                        />
+                        <button
+                            onClick={handleMaximize}
+                            className="w-3 h-3 rounded-full bg-[#27c93f]"
                         />
                     </div>
-                ))}
-                {/* Blinking Cursor */}
-                <motion.div
-                    animate={{ opacity: [1, 0] }}
-                    transition={{ duration: 0.8, repeat: Infinity }}
-                    className="inline-block w-[2px] h-4 bg-[#58a6ff] ml-[56px] translate-y-1"
-                />
-            </div>
 
-            {/* Footer Bar */}
-            <div className="bg-[#161b22] px-6 py-2 border-t border-[#30363d] flex justify-between items-center text-[10px] text-[#8b949e]">
-                <div className="flex gap-4">
-                    <span>JavaScript</span>
-                    <span>UTF-8</span>
+                    <span className="text-[#8b949e] text-[9px] sm:text-[10px] uppercase tracking-widest font-bold">
+                        profile.js
+                    </span>
                 </div>
-                <div className="flex items-center gap-1">
-                    <GoDotFill size={10} className="text-emerald-300 animate-caret-blink m-0 p-0 ml-1" />
-                    <span>Connected</span>
+
+                {/* Editor */}
+                <div
+                    ref={containerRef}
+                    className="
+          p-4 sm:p-6 lg:p-8
+          h-[380px] sm:h-[450px] lg:h-[550px]
+          overflow-y-auto
+          no-scrollbar
+          bg-[#0d1117]
+        "
+                >
+                    {displayText.split("\n").map((line, i) => (
+                        <div
+                            key={i}
+                            className="flex gap-3 sm:gap-6 leading-relaxed"
+                        >
+                            <span className="text-[#484f58] w-6 sm:w-8 text-right select-none shrink-0">
+                                {i + 1}
+                            </span>
+
+                            <span
+                                className="whitespace-pre-wrap sm:whitespace-pre text-[#c9d1d9]"
+                                dangerouslySetInnerHTML={{
+                                    __html: highlightCode(line),
+                                }}
+                            />
+                        </div>
+                    ))}
+
+                    {/* Cursor */}
+                    <motion.div
+                        animate={{ opacity: [1, 0] }}
+                        transition={{ duration: 0.8, repeat: Infinity }}
+                        className="inline-block w-[2px] h-4 bg-[#58a6ff] ml-[32px] sm:ml-[56px] translate-y-1"
+                    />
                 </div>
-            </div>
-        </motion.div>
+
+                {/* Footer */}
+                <div className="bg-[#161b22] px-4 sm:px-6 py-2 border-t border-[#30363d] flex justify-between items-center text-[9px] sm:text-[10px] text-[#8b949e]">
+                    <div className="flex gap-3 sm:gap-4">
+                        <span>JavaScript</span>
+                        <span>UTF-8</span>
+                    </div>
+
+                    <div className="flex items-center gap-1">
+                        <GoDotFill
+                            size={10}
+                            className="text-emerald-300 animate-caret-blink"
+                        />
+                        <span>Connected</span>
+                    </div>
+                </div>
+            </motion.div>
             {!isVisible && <Button className="cursor-pointer text-slate-50 hover:text-slate-500 border rounded-lg hover:bg-slate-50" onClick={showTerminal}>Show Terminal</Button>}
         </>
 

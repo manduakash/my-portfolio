@@ -119,7 +119,7 @@ export default function Home() {
             <Code2 className="text-green-600" size={20} />
             {PROFILE.name.toUpperCase().replace(" ", "_")}.dev
           </Link>
-          <div className="flex gap-8 items-center text-xs font-bold uppercase tracking-widest">
+          <div className="sm:flex gap-8 hidden items-center text-xs font-bold uppercase tracking-widest">
             <Link href="/cv" className="hover:text-sky-400 transition-colors">Download CV</Link>
             <Link href="#work" className="hover:text-sky-400 transition-colors">Experience</Link>
             <MagneticButton>
@@ -132,7 +132,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-44 pb-20 px-6 max-w-[90%] mx-auto min-h-screen flex items-center">
+      <section className="pt-24 sm:pt-32 lg:pt-44 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-8 max-w-full sm:max-w-[95%] lg:max-w-[90%] mx-auto min-h-[calc(100vh-64px)] lg:min-h-screen flex items-center">
         <div className="grid lg:grid-cols-2 gap-20 items-center w-full">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
 
@@ -167,7 +167,7 @@ export default function Home() {
               CRAFTING <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-indigo-600">DIGITAL CORE.</span>
             </h1>
 
-            <p className="text-lg text-slate-400 max-w-xl mb-12 leading-tight text-justify font-light">
+            <p className="text-sm sm:text-lg text-slate-400 sm:max-w-xl mb-12 leading-tight text-justify font-light">
               Results-driven Senior Developer at <span className="text-white">{PROFILE.company}</span> with over {PROFILE.experience} of experience in building enterprise-grade web and mobile applications. Proven track record in designing scalable system architectures and leading technical implementations for complex platforms serving millions of users.
             </p>
 
@@ -190,7 +190,19 @@ export default function Home() {
             </div>
           </motion.div>
 
-          <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8 }} className="relative flex justify-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="
+    relative
+    flex justify-center
+    w-full
+    px-2 sm:px-0
+    scale-[0.95] sm:scale-100
+    origin-center
+  "
+          >
             <Terminal />
           </motion.div>
         </div>
@@ -239,26 +251,27 @@ export default function Home() {
           </div>
         </div>
         {/* List of all skills */}
-        <div className="flex flex-wrap gap-4 mt-12 justify-center">
+        <div className="flex flex-wrap gap-2 sm:gap-4 mt-12 justify-center sm:justify-start">
           {PROFILE.skills.map((skill, index) => (
-            <div key={index} className="px-6 flex justify-center items-center gap-2 py-3.5 bg-white hover:bg-sky-50 border hover:border-sky-700 cursor-pointer hover:shadow-sky-700 shadow shadow-slate-700 rounded-xl text-slate-600 hover:text-sky-600 transition-all backdrop-blur-lg"><img
+            <div key={index} className="text-xs sm:text-base px-2 sm:px-6 flex sm:justify-center items-center gap-1 sm:gap-2 py-2 sm:py-3.5 bg-white hover:bg-sky-50 border hover:border-sky-700 cursor-pointer hover:shadow-sky-700 shadow shadow-slate-700 rounded-xl text-slate-600 hover:text-sky-600 transition-all backdrop-blur-lg"><img
               src={`https://api.iconify.design/logos:${skill == "React Native" ? "react" : skill.toLowerCase().replace('.', '')}.svg`}
               alt={skill}
-              className="w-8 h-8 object-contain brightness-125"
+              className="w-4 h-4 sm:w-8 sm:h-8 object-contain brightness-125"
               onError={(e: any) => e.target.src = 'https://api.iconify.design/lucide:code.svg?color=%23fbbf24'}
             /> {skill}</div>
           ))}
         </div>
+
       </section>
 
       {/* Projects Horizontal Scroll */}
-      <section id="work" className="py-32 border-t border-slate-800">
-        <div className="max-w-[80%] mx-auto px-6 mb-16 flex justify-between items-end">
+      <section id="work" className="py-6 sm:py-32 border-t border-slate-800">
+        <div className="sm:max-w-[80%] mx-auto px-6 mb-6 sm:mb-16 flex flex-col sm:flex-row sm:justify-center justify-start sm:items-center items-start ">
           <div>
             <h2 className="text-green-600 font-bold text-xs tracking-[0.4em] uppercase mb-4">// Featured Projects</h2>
             <h3 className="text-5xl font-bold text-white tracking-tighter">Top <span className="text-sky-400 font-bold">#5</span> Projects</h3>
           </div>
-          <Link href="/projects" className="text-sm font-bold text-slate-500 hover:text-white transition-colors flex items-center gap-2">
+          <Link href="/projects" className="sm:text-sm text-xs mt-2 sm:mt-0 font-bold text-slate-500 hover:text-white transition-colors flex items-center gap-2">
             See More Projects <ExternalLink size={16} />
           </Link>
         </div>
@@ -268,15 +281,15 @@ export default function Home() {
             <motion.div
               key={i}
               whileHover={{ y: -10 }}
-              className="min-w-[400px] md:min-w-[600px] bg-slate-900/20 border border-slate-700/50 rounded-3xl overflow-hidden backdrop-blur-sm group"
+              className="min-w-[85vw] sm:min-w-[400px] md:min-w-[600px] bg-slate-900/20 border border-slate-700/50 rounded-3xl overflow-hidden backdrop-blur-sm group"
             >
-              <div className="h-72 bg-slate-950 border-b border-slate-800">
+              <div className="sm:h-72 h-52 bg-slate-950 border-b border-slate-800">
                 <img src={project.image} alt={project.title} className="w-full h-full object-cover opacity-50 group-hover:opacity-100 transition-opacity duration-700" />
               </div>
-              <div className="p-12">
-                <span className="text-sky-500 text-xs font-bold tracking-widest uppercase">{project.client}</span>
-                <h3 className="text-3xl font-bold text-white mt-2 mb-4 group-hover:text-sky-400 transition-colors">{project.title}</h3>
-                <p className="text-slate-400 leading-relaxed mb-10 text-lg font-light">{project.description}</p>
+              <div className="sm:p-12 p-4">
+                <span className="text-sky-500 text-xs font-bold sm:tracking-widest tracking-tight sm:leading-relaxed leading-tight uppercase">{project.client}</span>
+                <h3 className="sm:text-3xl text-lg font-bold text-white sm:mt-2 sm:mb-4 mt-1 mb-2 group-hover:text-sky-400 transition-colors">{project.title}</h3>
+                <p className="text-slate-400 sm:leading-relaxed leading-tight sm:mb-10 mb-5 sm:text-lg text-sm font-light">{project.description}</p>
                 <Link
                   href={`/project/${project.id}`}
                   className="inline-flex items-center gap-2 text-white font-bold text-sm bg-slate-800 px-6 py-3 rounded-xl hover:bg-sky-600 transition-colors"

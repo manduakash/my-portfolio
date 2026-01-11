@@ -57,17 +57,17 @@ export default function Timeline() {
                                         {item.type} {item.type === "Currently Serving" && <GoDotFill size={10} className="text-emerald-200 animate-caret-blink m-0 p-0 ml-1" />}
                                     </span>
 
-                                    <h3 className="text-2xl font-bold text-white group-hover:text-sky-400 transition-colors">
+                                    <h3 className="text-lg md:text-xl sm:text-2xl leading-4 sm:leading-relaxed font-bold text-white group-hover:text-sky-400 transition-colors">
                                         {item.role}
                                     </h3>
-                                    <p className="flex items-baseline gap-2 text-slate-200 font-medium mb-2">{item.company} <a href={item.site || "#"} className="flex gap-1 justify-center items-center text-slate-500 text-sm hover:underline hover:text-blue-600">visit <ExternalLink size={12} /></a></p>
+                                    <p className="flex flex-col text-sm sm:text-base sm:flex-row items-baseline gap-2 text-slate-200 font-medium mb-2">{item.company} <a href={item.site || "#"} className="flex gap-1 justify-center items-center text-slate-500 text-sm hover:underline hover:text-blue-600">visit <ExternalLink size={12} /></a></p>
 
                                     <div className="flex items-center gap-2 text-slate-500 text-sm mb-4 font-mono">
                                         <Calendar size={14} />
                                         {item.duration}
                                     </div>
 
-                                    <p className="text-slate-400 text-sm leading-relaxed mb-6 font-light">
+                                    <p className="text-slate-400 text-justify sm:text-start text-xs sm:text-sm leading-tight md:leading-relaxed mb-6 font-light">
                                         {item.description}
                                     </p>
 
