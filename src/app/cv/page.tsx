@@ -2,21 +2,13 @@
 import React, { useRef } from "react";
 import {
     Mail, Phone, MapPin, Globe, Github,
-    Linkedin, Download, Printer, ExternalLink,
+    Linkedin, Printer, ArrowLeft,
     Award, Briefcase, GraduationCap, Code2,
-    ArrowLeft,
     Instagram,
     ExternalLinkIcon,
-    Cpu,
-    Palette,
-    Plane,
-    ChefHat,
-    Music,
-    Dumbbell,
-    Sparkles
+    Cpu, Palette, Plane, ChefHat, Music, Dumbbell, Sparkles
 } from "lucide-react";
 import { PROFILE, PROJECTS, EXPERIENCE, ACHIEVEMENTS, HOBBIES } from "@/data/mock";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa";
 
@@ -37,38 +29,40 @@ export default function CVPage() {
     };
 
     return (
-        <main className="min-h-screen bg-slate-50 py-10 print:py-0 print:bg-white">
+        <main className="min-h-screen bg-slate-50 py-6 md:py-10 print:py-0 print:bg-white">
             {/* --- Control Bar (Hidden on Print) --- */}
-            <div className="max-w-[210mm] mx-auto mb-6 flex justify-between items-center px-4 print:hidden">
+            <div className="w-full max-w-5xl md:max-w-[210mm] mx-auto mb-6 flex flex-col sm:flex-row justify-between items-center px-4 gap-4 print:hidden">
                 <h1 className="text-xl font-bold text-slate-800">Curriculum Vitae</h1>
-                <div className="flex gap-3">
+                <div className="flex gap-3 w-full sm:w-auto">
                     <Link
                         href={"/"}
-                        className="flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 rounded-lg text-slate-600 hover:bg-slate-50 transition-all font-medium text-sm shadow-sm"
+                        className="flex-1 sm:flex-none justify-center flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 rounded-lg text-slate-600 hover:bg-slate-50 transition-all font-medium text-sm shadow-sm"
                     >
-                        <ArrowLeft size={16} /> Go Back
+                        <ArrowLeft size={16} /> <span className="sm:hidden">Back</span><span className="hidden sm:inline">Go Back</span>
                     </Link>
                     <button
                         onClick={handlePrint}
-                        className="flex cursor-pointer items-center gap-2 px-4 py-2 bg-white border border-slate-200 rounded-lg text-slate-600 hover:bg-sky-100 transition-all font-medium text-sm shadow-sm"
+                        className="flex-1 sm:flex-none justify-center flex cursor-pointer items-center gap-2 px-4 py-2 bg-white border border-slate-200 rounded-lg text-slate-600 hover:bg-sky-100 transition-all font-medium text-sm shadow-sm"
                     >
-                        <Printer size={16} /> Print / Save as PDF
+                        <Printer size={16} /> Print / PDF
                     </button>
                 </div>
             </div>
 
-            {/* --- CV Container (A4 Paper) --- */}
+            {/* --- CV Container --- */}
+            {/* FORCE PRINT STYLES: print:max-w-[210mm] print:p-[15mm] overrides mobile width/padding */}
             <div
                 ref={printRef}
-                className="mx-auto bg-white shadow-2xl print:shadow-none w-full max-w-[210mm] min-h-[297mm] p-[15mm] text-slate-800 font-sans"
+                className="mx-auto bg-white shadow-none sm:shadow-2xl print:shadow-none w-full max-w-none md:max-w-[210mm] md:min-h-[297mm] p-6 md:p-[15mm] print:max-w-[210mm] print:min-h-[297mm] print:p-[15mm] text-slate-800 font-sans"
             >
                 {/* --- Header Section --- */}
-                <header className="border-b-2 border-slate-800 pb-8 mb-8 flex justify-between items-start">
+                {/* FORCE PRINT ROW: print:flex-row ensures header is side-by-side in PDF */}
+                <header className="border-b-2 border-slate-800 pb-8 mb-8 flex flex-col md:flex-row print:flex-row justify-between items-start gap-6 md:gap-0 print:gap-0">
                     <div>
-                        <h1 className="text-4xl font-black tracking-tighter text-slate-900 uppercase">
+                        <h1 className="text-3xl md:text-4xl print:text-4xl font-black tracking-tighter text-slate-900 uppercase">
                             {PROFILE.name}
                         </h1>
-                        <p className="text-xl font-bold text-sky-600 mt-1 uppercase tracking-widest">
+                        <p className="text-lg md:text-xl print:text-xl font-bold text-sky-600 mt-1 uppercase tracking-widest">
                             {PROFILE.role}
                         </p>
                         <p className="text-slate-500 mt-2 max-w-lg text-sm leading-relaxed italic">
@@ -76,25 +70,30 @@ export default function CVPage() {
                         </p>
                     </div>
 
-                    <div className="text-right space-y-1 text-sm">
-                        <div className="flex items-center justify-end gap-2 text-slate-600">
-                            <span>{PROFILE.email}</span> <Mail size={14} />
+                    <div className="w-full md:w-auto print:w-auto text-left md:text-right print:text-right space-y-2 md:space-y-1 print:space-y-1 text-sm">
+                        <div className="flex items-center md:justify-end print:justify-end gap-3 md:gap-2 print:gap-2 text-slate-600">
+                            <Mail size={14} className="md:order-2 print:order-2 shrink-0" /> <span className="md:order-1 print:order-1">{PROFILE.email}</span>
                         </div>
-                        <div className="flex items-center justify-end gap-2 text-slate-600">
-                            <span>{PROFILE.phone}</span> <Phone size={14} />
+                        <div className="flex items-center md:justify-end print:justify-end gap-3 md:gap-2 print:gap-2 text-slate-600">
+                            <Phone size={14} className="md:order-2 print:order-2 shrink-0" /> <span className="md:order-1 print:order-1">{PROFILE.phone}</span>
                         </div>
-                        <div className="flex items-center justify-end gap-2 text-slate-600">
-                            <span>{PROFILE.location}</span> <MapPin size={14} />
+                        <div className="flex items-center md:justify-end print:justify-end gap-3 md:gap-2 print:gap-2 text-slate-600">
+                            <MapPin size={14} className="md:order-2 print:order-2 shrink-0" /> <span className="md:order-1 print:order-1">{PROFILE.location}</span>
                         </div>
-                        <div className="flex items-center justify-end gap-2 text-sky-600 font-bold pt-2">
-                            <a href={PROFILE.portfolioLink} target="_blank" className="text-xs uppercase tracking-tighter hover:underline">My Portfolio</a> <Globe size={14} />
+                        <div className="flex items-center md:justify-end print:justify-end gap-3 md:gap-2 print:gap-2 text-sky-600 font-bold pt-2">
+                            <Globe size={14} className="md:order-2 print:order-2 shrink-0" />
+                            <a href={PROFILE.portfolioLink} target="_blank" className="text-xs uppercase tracking-tighter hover:underline md:order-1 print:order-1">Portfolio</a>
                         </div>
                     </div>
                 </header>
 
-                <div className="grid grid-cols-12 gap-10">
+                {/* --- Grid Layout --- */}
+                {/* FORCE PRINT GRID: print:grid print:grid-cols-12 restores 2-column layout */}
+                <div className="flex flex-col md:grid md:grid-cols-12 print:grid print:grid-cols-12 gap-10">
+
                     {/* --- Left Column (Sidebar) --- */}
-                    <aside className="col-span-4 space-y-12 border-r border-slate-100 pr-6">
+                    {/* FORCE PRINT ORDER & BORDER: print:order-1 puts sidebar back on left, print:border-r restores vertical divider */}
+                    <aside className="order-2 md:order-1 print:order-1 md:col-span-4 print:col-span-4 space-y-8 md:space-y-12 print:space-y-12 border-t md:border-t-0 print:border-t-0 md:border-r print:border-r border-slate-100 pt-8 md:pt-0 print:pt-0 pr-0 md:pr-6 print:pr-6">
 
                         {/* Skills */}
                         <section>
@@ -115,7 +114,7 @@ export default function CVPage() {
                             <h2 className="text-xs font-black uppercase tracking-[0.2em] text-slate-400 mb-4 flex items-center gap-2">
                                 <GraduationCap size={14} /> Qualifications
                             </h2>
-                            <div className="space-y-4">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 print:grid-cols-1 gap-4">
                                 {PROFILE.qualifications.map((q, i) => (
                                     <div key={i} className="group">
                                         <p className="text-[11px] font-black text-slate-900 leading-tight">
@@ -132,23 +131,21 @@ export default function CVPage() {
                             </div>
                         </section>
 
-                        {/* Hobbies */}
+                        {/* Interests */}
                         <section>
                             <h3 className="text-xs font-black uppercase tracking-[0.2em] text-slate-400 mb-4 flex items-center gap-2">
                                 <Sparkles size={14} /> More Than Just Code
                             </h3>
-
-                            <div className="grid grid-cols-1 gap-2">
+                            <div className="grid grid-cols-2 md:grid-cols-1 print:grid-cols-1 gap-2">
                                 {HOBBIES.map((s, index) => {
                                     const Icon = ICON_MAP[s.icon];
-
                                     return (
                                         <div
                                             key={index}
                                             title={s.description}
                                             className="text-[11px] text-slate-500 hover:text-sky-600 flex items-center gap-2 transition-colors"
                                         >
-                                            {Icon && <Icon size={14} className="opacity-70" />}
+                                            {Icon && <Icon size={14} className="opacity-70 shrink-0" />}
                                             {s.title}
                                         </div>
                                     );
@@ -156,11 +153,10 @@ export default function CVPage() {
                             </div>
                         </section>
 
-
                         {/* Socials */}
                         <section className="">
                             <h2 className="text-xs font-black uppercase tracking-[0.2em] text-slate-400 mb-4 flex items-center gap-2"><Globe size={14} /> Social</h2>
-                            <div className="grid grid-cols-1 gap-2">
+                            <div className="grid grid-cols-2 md:grid-cols-1 print:grid-cols-1 gap-2">
                                 {PROFILE.socials.map((s) => (
                                     <a key={s.name} href={s.link} className="text-[11px] text-slate-500 hover:text-sky-600 flex items-center gap-2">
                                         {s.name === "Github" && <Github size={12} />}
@@ -175,7 +171,8 @@ export default function CVPage() {
                     </aside>
 
                     {/* --- Right Column (Main Content) --- */}
-                    <section className="col-span-8 space-y-10">
+                    {/* FORCE PRINT ORDER: print:order-2 puts main content back on right */}
+                    <section className="order-1 md:order-2 print:order-2 md:col-span-8 print:col-span-8 space-y-10">
 
                         {/* Work Experience */}
                         <section>
@@ -186,12 +183,12 @@ export default function CVPage() {
                                 {EXPERIENCE.filter(e => e.type === "Currently Serving").map((exp) => (
                                     <div key={exp.id} className="relative pl-4 border-l-2 border-slate-100">
                                         <div className="absolute -left-[7px] top-0 w-3 h-3 bg-white border-2 border-sky-500 rounded-full" />
-                                        <div className="flex justify-between items-start mb-1">
-                                            <h3 className="text-lg font-bold text-slate-900 leading-none">{exp.role}</h3>
+                                        <div className="flex flex-col sm:flex-row print:flex-row justify-between sm:items-start print:items-start mb-1">
+                                            <h3 className="text-lg font-bold text-slate-900 leading-none mb-1 sm:mb-0 print:mb-0">{exp.role}</h3>
                                             <span className="text-[10px] font-black text-sky-600 uppercase tracking-widest">{exp.duration}</span>
                                         </div>
                                         <p className="text-sm font-bold text-slate-600 mb-3 uppercase tracking-tighter">{exp.company}</p>
-                                        <p className="text-[12px] leading-relaxed text-slate-500">
+                                        <p className="text-[12px] leading-relaxed text-slate-500 text-justify md:text-left print:text-left">
                                             {exp.description}
                                         </p>
                                     </div>
@@ -207,9 +204,9 @@ export default function CVPage() {
                             <div className="grid grid-cols-1 gap-4">
                                 {ACHIEVEMENTS.slice(0, 5).map((ach) => (
                                     <div key={ach.id} className="p-4 bg-slate-50 rounded-xl border border-slate-100">
-                                        <div className="flex justify-between items-center mb-1">
+                                        <div className="flex flex-col sm:flex-row print:flex-row justify-between sm:items-center print:items-center mb-2 sm:mb-1 print:mb-1 gap-2 sm:gap-0 print:gap-0">
                                             <h4 className="text-sm font-bold text-slate-900">{ach.title}</h4>
-                                            <span className="text-[10px] font-bold text-sky-600 bg-sky-50 px-2 py-0.5 rounded">{ach.tag}</span>
+                                            <span className="w-fit text-[10px] font-bold text-sky-600 bg-sky-50 px-2 py-0.5 rounded">{ach.tag}</span>
                                         </div>
                                         <p className="text-[11px] text-slate-500 leading-relaxed italic">
                                             {ach.description}
@@ -219,20 +216,24 @@ export default function CVPage() {
                             </div>
                         </section>
 
-                        {/* Major Projects (Concise for CV) */}
-                        <section className="pt-5">
+                        {/* Major Projects */}
+                        <section className="pt-2 md:pt-5 print:pt-5">
                             <h2 className="text-xs font-black uppercase tracking-[0.2em] text-slate-400 mb-6 flex items-center gap-2">
                                 <Code2 size={14} /> Key Projects
                             </h2>
                             <div className="grid grid-cols-1 gap-4">
                                 {PROJECTS.slice(0, 5).map((project) => (
                                     <a href={project.link} key={project.id} className="group border-b border-slate-50 pb-4">
-                                        <div className="flex justify-between items-center mb-1">
-                                            <h4 className="text-sm font-bold text-slate-900 flex flex-col">
-                                                <span className="underline group-hover:text-sky-600 flex items-center gap-1">{project.title}<ExternalLinkIcon size={12} /></span>
-                                                <span className="text-[9px] text-slate-400 font-normal">{project.client}</span>
+                                        <div className="flex flex-col sm:flex-row print:flex-row justify-between sm:items-center print:items-center mb-1">
+                                            <h4 className="text-sm font-bold text-slate-900 flex flex-col sm:flex-row print:flex-row sm:items-center print:items-center gap-1">
+                                                <span className="underline group-hover:text-sky-600 flex items-center gap-1">
+                                                    {project.title} <ExternalLinkIcon size={12} className="hidden sm:inline print:inline" />
+                                                </span>
+                                                <span className="text-[9px] text-slate-400 font-normal sm:before:content-['•'] print:before:content-['•'] sm:before:mx-2 print:before:mx-2">
+                                                    {project.client}
+                                                </span>
                                             </h4>
-                                            <span className="text-[10px] font-mono text-slate-400">{project.timeline}</span>
+                                            <span className="text-[10px] font-mono text-slate-400 mt-1 sm:mt-0 print:mt-0">{project.timeline}</span>
                                         </div>
                                         <p className="text-[11px] text-slate-500 line-clamp-3 mb-2">{project.description}</p>
                                         <div className="flex flex-wrap gap-1">
@@ -244,15 +245,15 @@ export default function CVPage() {
                                         </div>
                                     </a>
                                 ))}
-                                <p className="text-[10px] text-slate-400 italic mt-2 text-center">
-                                    + {PROJECTS.length - 5} more large scale government applications managed.
-                                </p>
+                                <a href="https://my-portfolio-two-peach-23.vercel.app/projects" target="_blank" className="text-[10px] text-indigo-600 underline italic mt-2 text-center">
+                                    + {PROJECTS.length - 5} more large scale applications managed.
+                                </a>
                             </div>
                         </section>
                     </section>
                 </div>
 
-                {/* --- Footer (Page Number / URL) --- */}
+                {/* --- Footer --- */}
                 <footer className="mt-12 pt-6 border-t border-slate-100 text-center">
                     <p className="text-[10px] text-slate-400 uppercase tracking-widest font-bold">
                         Generated via <a href={PROFILE.portfolioLink} target="_blank" className="text-sky-600 hover:underline">my-portfolio.vercel.app</a> • Portfolio & Full Project Logs Available Online

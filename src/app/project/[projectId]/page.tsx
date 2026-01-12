@@ -55,31 +55,32 @@ export default function ProjectDetail() {
                     >
                         <ArrowLeft size={18} /> BACK
                     </button>
-                    <div className="text-xs font-bold text-slate-500 uppercase tracking-widest">
+                    <div className="hidden sm:block text-xs font-bold text-slate-500 uppercase tracking-widest">
                         Project / {project.title}
                     </div>
                 </div>
             </nav>
 
             {/* Content */}
-            <div className="pt-32 max-w-5xl mx-auto px-6">
+            <div className="pt-24 md:pt-32 md:max-w-5xl mx-auto px-4 md:px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                 >
                     {/* Header */}
-                    <div className="mb-12">
-                        <span className="text-sky-500 font-bold tracking-widest uppercase text-sm">
+                    <div className="mb-8 md:mb-12">
+                        <span className="text-sky-500 font-bold tracking-widest uppercase text-xs md:text-sm">
                             Featured Case Study
                         </span>
-                        <h1 className="text-5xl md:text-7xl font-extrabold text-white mt-4 tracking-tighter">
+                        {/* Title scales from 3xl (mobile) to 7xl (desktop) */}
+                        <h1 className="text-3xl sm:text-5xl md:text-7xl font-extrabold text-white mt-2 md:mt-4 tracking-tighter">
                             {project.title}
                         </h1>
                     </div>
 
                     {/* Featured Image */}
-                    <div className="relative h-[300px] md:h-[500px] w-full rounded-3xl overflow-hidden border border-slate-800 mb-12">
+                    <div className="relative h-64 sm:h-[300px] md:h-[500px] w-full rounded-2xl md:rounded-3xl overflow-hidden border border-slate-800 mb-8 md:mb-12">
                         <img
                             src={project.image}
                             alt={project.title}
@@ -89,28 +90,34 @@ export default function ProjectDetail() {
                     </div>
 
                     {/* Project Overview Grid */}
-                    <div className="grid md:grid-cols-3 gap-12 mb-16">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-10 md:mb-16">
+
+                        {/* Main Description Column */}
                         <div className="md:col-span-2">
-                            <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                            <h2 className="text-xl md:text-2xl font-bold text-white mb-4 md:mb-6 flex items-center gap-2">
                                 <CheckCircle className="text-sky-500" size={24} /> Project Overview
                             </h2>
-                            <p className="text-xl leading-relaxed text-slate-400 font-light text-justify">
+
+                            {/* APPLIED CHANGE: text-base + leading-tight on mobile, text-xl + leading-relaxed on desktop */}
+                            {/* Also switched mobile to text-left to prevent ugly spacing gaps in justified text on narrow screens */}
+                            <p className="text-base md:text-xl leading-tight md:leading-relaxed text-slate-400 font-light text-left md:text-justify">
                                 {project.detailed_description}
                             </p>
                         </div>
 
-                        <div className="space-y-8 bg-slate-900/30 p-8 rounded-3xl border border-slate-800 backdrop-blur-sm h-fit">
+                        {/* Sidebar Info Box */}
+                        <div className="space-y-6 md:space-y-8 bg-slate-900/30 p-6 md:p-8 rounded-2xl md:rounded-3xl border border-slate-800 backdrop-blur-sm h-fit">
                             <div>
                                 <label className="text-[10px] font-bold text-slate-500 uppercase tracking-widest flex items-center gap-2 mb-2">
                                     <User size={14} /> Client
                                 </label>
-                                <p className="text-white font-bold">{project.client}</p>
+                                <p className="text-white font-bold text-sm md:text-base">{project.client}</p>
                             </div>
                             <div>
                                 <label className="text-[10px] font-bold text-slate-500 uppercase tracking-widest flex items-center gap-2 mb-2">
                                     <Globe size={14} /> Live Preview
                                 </label>
-                                <a href={project.link} className="text-sky-400 font-bold hover:underline flex items-center gap-1">
+                                <a href={project.link} className="text-sky-400 font-bold hover:underline flex items-center gap-1 text-sm md:text-base">
                                     Visit Website <ExternalLink size={14} />
                                 </a>
                             </div>
@@ -118,21 +125,24 @@ export default function ProjectDetail() {
                                 <label className="text-[10px] font-bold text-slate-500 uppercase tracking-widest flex items-center gap-2 mb-2">
                                     <Calendar size={14} /> Timeline
                                 </label>
-                                <p className="text-white font-bold">{project.timeline}</p>
+                                <p className="text-white font-bold text-sm md:text-base">{project.timeline}</p>
                             </div>
                         </div>
                     </div>
 
                     {/* Future sections (Tech Stack, Results etc) */}
-                    <div className="border-t border-slate-800 pt-16">
-                        <h3 className="text-2xl font-bold text-white mb-8">Technical Implementation</h3>
-                        <p className="text-slate-400 leading-relaxed mb-10">
+                    <div className="border-t border-slate-800 pt-10 md:pt-16 pb-20">
+                        <h3 className="text-xl md:text-2xl font-bold text-white mb-6 md:mb-8">Technical Implementation</h3>
+
+                        {/* Applied leading-tight here as well for consistency */}
+                        <p className="text-slate-400 text-sm md:text-base leading-tight md:leading-relaxed mb-8 md:mb-10">
                             Built using a scalable architecture designed to handle high-frequency data updates.
                             Focused on minimizing latency and maximizing user engagement through intuitive UI patterns.
                         </p>
-                        <div className="flex flex-wrap gap-3">
+
+                        <div className="flex flex-wrap gap-2 md:gap-3">
                             {project?.technologies?.map((tech) => (
-                                <span key={tech} className="px-4 py-2 bg-slate-800/50 border border-slate-700 rounded-lg text-xs font-bold text-white">
+                                <span key={tech} className="px-3 md:px-4 py-1.5 md:py-2 bg-slate-800/50 border border-slate-700 rounded-lg text-[10px] md:text-xs font-bold text-white">
                                     {tech}
                                 </span>
                             ))}

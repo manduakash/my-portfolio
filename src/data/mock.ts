@@ -73,14 +73,14 @@ export const PROJECTS = [
   },
   {
     id: 5,
-    title: "Sanjukta Portal",
-    description: "An integrated single sign-on platform developed to unify multiple police applications under a centralized dashboard.",
-    detailed_description: "SANGJUKTA is a unified digital platform developed for West Bengal Police to integrate multiple operational applications such as PCC, All Arrest, BDDS, LIMS, and Court Monitoring Systems. The platform provides a centralized dashboard with single sign-on access, enabling seamless data sharing, improved monitoring, and enhanced operational efficiency.",
+    title: "TOTO Registration Portal",
+    description: "Official portal for TOTO vehicle registration and Enrolment number application. Get your TTEN quickly and legally to operate your TOTO vehicle.",
+    detailed_description: "TOTO vehicles provide affordable transportation to our citizens. This digital platform ensures transparent and efficient registration process for all TOTO operators. We are committed to modernizing our transport infrastructure while supporting the livelihood of our people.",
     company: "Vyoma Innovus Global Pvt. Ltd.",
-    client: "West Bengal Police & Department of IT",
-    link: "https://superdashboard.wbapplication.link/",
-    image: "/projects/superdashboard.png",
-    technologies: ["Next.js", "TypeScript", "Java", "Spring Boot", "Redux", "Git", "ShadCN", "MySQL"],
+    client: "Department of Transport (Govt. of WB)",
+    link: "https://tten.wb.gov.in/",
+    image: "/projects/tten.png",
+    technologies: ["Next.js", "TypeScript", "Java", "Spring Boot", "Git", "MySQL"],
     timeline: "2025 - Present"
   },
   {
@@ -154,7 +154,19 @@ export const PROJECTS = [
     image: "/projects/allarrest.png",
     technologies: ["PHP", "Laravel", "MySQL", "HTML", "CSS", "JavaScript", "Bootstrap", "JQuery", "SVN (Rabbit)"],
     timeline: "2025 - Present"
-  }
+  }, 
+   {
+    id: 12,
+    title: "Sanjukta Portal",
+    description: "An integrated single sign-on platform developed to unify multiple police applications under a centralized dashboard.",
+    detailed_description: "SANGJUKTA is a unified digital platform developed for West Bengal Police to integrate multiple operational applications such as PCC, All Arrest, BDDS, LIMS, and Court Monitoring Systems. The platform provides a centralized dashboard with single sign-on access, enabling seamless data sharing, improved monitoring, and enhanced operational efficiency.",
+    company: "Vyoma Innovus Global Pvt. Ltd.",
+    client: "West Bengal Police & Department of IT",
+    link: "https://superdashboard.wbapplication.link/",
+    image: "/projects/superdashboard.png",
+    technologies: ["Next.js", "TypeScript", "Java", "Spring Boot", "Redux", "Git", "ShadCN", "MySQL"],
+    timeline: "2025 - Present"
+  },
 ];
 
 export const EXPERIENCE = [

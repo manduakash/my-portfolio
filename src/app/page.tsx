@@ -251,7 +251,7 @@ export default function Home() {
           </div>
         </div>
         {/* List of all skills */}
-        <div className="flex flex-wrap gap-2 sm:gap-4 mt-12 justify-center sm:justify-start">
+        <div className="flex flex-wrap gap-2 sm:gap-4 mt-12 justify-center sm:justify-start md:justify-center md:px-6">
           {PROFILE.skills.map((skill, index) => (
             <div key={index} className="text-xs sm:text-base px-2 sm:px-6 flex sm:justify-center items-center gap-1 sm:gap-2 py-2 sm:py-3.5 bg-white hover:bg-sky-50 border hover:border-sky-700 cursor-pointer hover:shadow-sky-700 shadow shadow-slate-700 rounded-xl text-slate-600 hover:text-sky-600 transition-all backdrop-blur-lg"><img
               src={`https://api.iconify.design/logos:${skill == "React Native" ? "react" : skill.toLowerCase().replace('.', '')}.svg`}
@@ -266,33 +266,56 @@ export default function Home() {
 
       {/* Projects Horizontal Scroll */}
       <section id="work" className="py-6 sm:py-32 border-t border-slate-800">
-        <div className="sm:max-w-[80%] mx-auto px-6 mb-6 sm:mb-16 flex flex-col sm:flex-row sm:justify-center justify-start sm:items-center items-start ">
+        <div className="w-full max-w-[95%] md:max-w-[80%] mx-auto px-4 md:px-6 mb-8 md:mb-16 flex flex-col md:flex-row justify-between items-start md:items-end gap-6 md:gap-0">
           <div>
-            <h2 className="text-green-600 font-bold text-xs tracking-[0.4em] uppercase mb-4">// Featured Projects</h2>
-            <h3 className="text-5xl font-bold text-white tracking-tighter">Top <span className="text-sky-400 font-bold">#5</span> Projects</h3>
+            <h2 className="text-green-600 font-bold text-[10px] md:text-xs tracking-[0.4em] uppercase mb-2 md:mb-4">
+              // Featured Projects
+            </h2>
+            <h3 className="text-3xl md:text-5xl font-bold text-white tracking-tighter">
+              Top <span className="text-sky-400 font-bold">#5</span> Projects
+            </h3>
           </div>
-          <Link href="/projects" className="sm:text-sm text-xs mt-2 sm:mt-0 font-bold text-slate-500 hover:text-white transition-colors flex items-center gap-2">
+
+          <Link href="/projects" className="text-sm font-bold text-slate-500 hover:text-white transition-colors flex items-center gap-2">
             See More Projects <ExternalLink size={16} />
           </Link>
         </div>
 
-        <div className="flex gap-8 overflow-x-auto px-6 pb-20 pt-10 no-scrollbar scroll-smooth">
+        <div className="flex gap-4 sm:gap-8 overflow-x-auto px-4 sm:px-6 pb-12 sm:pb-20 pt-10 no-scrollbar scroll-smooth snap-x snap-mandatory">
           {PROJECTS.slice(0, 5).map((project, i) => (
             <motion.div
               key={i}
               whileHover={{ y: -10 }}
-              className="min-w-[85vw] sm:min-w-[400px] md:min-w-[600px] bg-slate-900/20 border border-slate-700/50 rounded-3xl overflow-hidden backdrop-blur-sm group"
+              // Added 'snap-center' so cards lock in middle of screen on mobile
+              // Changed rounded-3xl to rounded-2xl on mobile for better proportion
+              className="snap-center min-w-[85vw] sm:min-w-[400px] md:min-w-[600px] bg-slate-900/20 border border-slate-700/50 rounded-2xl sm:rounded-3xl overflow-hidden backdrop-blur-sm group flex flex-col"
             >
-              <div className="sm:h-72 h-52 bg-slate-950 border-b border-slate-800">
-                <img src={project.image} alt={project.title} className="w-full h-full object-cover opacity-50 group-hover:opacity-100 transition-opacity duration-700" />
+              <div className="h-52 sm:h-72 bg-slate-950 border-b border-slate-800 relative">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover opacity-60 sm:opacity-50 group-hover:opacity-100 transition-opacity duration-700"
+                />
               </div>
-              <div className="sm:p-12 p-4">
-                <span className="text-sky-500 text-xs font-bold sm:tracking-widest tracking-tight sm:leading-relaxed leading-tight uppercase">{project.client}</span>
-                <h3 className="sm:text-3xl text-lg font-bold text-white sm:mt-2 sm:mb-4 mt-1 mb-2 group-hover:text-sky-400 transition-colors">{project.title}</h3>
-                <p className="text-slate-400 sm:leading-relaxed leading-tight sm:mb-10 mb-5 sm:text-lg text-sm font-light">{project.description}</p>
+
+              <div className="p-5 sm:p-12 flex flex-col sm:block h-full">
+                <span className="text-sky-500 text-[10px] sm:text-xs font-bold tracking-widest uppercase mb-2">
+                  {project.client}
+                </span>
+
+                <h3 className="text-xl sm:text-3xl font-bold text-white mb-3 sm:mb-4 group-hover:text-sky-400 transition-colors">
+                  {project.title}
+                </h3>
+
+                {/* Added line-clamp-3 to prevent massive height differences on mobile if text is long */}
+                <p className="text-slate-400 text-sm sm:text-lg font-light leading-relaxed mb-6 sm:mb-10 line-clamp-3 sm:line-clamp-none">
+                  {project.description}
+                </p>
+
+                {/* Button is w-full (full width) on mobile for easier tapping, w-auto on desktop */}
                 <Link
                   href={`/project/${project.id}`}
-                  className="inline-flex items-center gap-2 text-white font-bold text-sm bg-slate-800 px-6 py-3 rounded-xl hover:bg-sky-600 transition-colors"
+                  className="mt-auto w-full sm:w-auto inline-flex justify-center sm:justify-start items-center gap-2 text-white font-bold text-sm bg-slate-800 px-6 py-4 sm:py-3 rounded-xl hover:bg-sky-600 transition-colors"
                 >
                   Explore Project <ExternalLink size={14} />
                 </Link>
