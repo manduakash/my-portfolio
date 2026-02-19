@@ -51,7 +51,7 @@ export default function FullProjects() {
                                 </h3>
 
                                 {/* Description: leading-tight on mobile, relaxed on desktop. Font size scaled down. */}
-                                <p className="text-slate-400 text-sm md:text-lg font-light leading-tight md:leading-relaxed mb-6 md:mb-10 line-clamp-4 md:line-clamp-none">
+                                <p className="text-slate-400 text-sm md:text-lg font-light leading-tight mb-6 md:mb-6 line-clamp-4 md:line-clamp-none">
                                     {project.description}
                                 </p>
 

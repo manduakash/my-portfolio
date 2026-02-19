@@ -1,7 +1,7 @@
 export const PROFILE = {
   name: "Akash Singh",
   role: "Senior Software Developer",
-  company: "Vyoma Innovus Global Pvt. Ltd.",
+  company: "NexIntel Synergy Pvt. Ltd.",
   experience: "4 Years",
   bio: "Results-driven Senior Developer with over 4 years of experience in building enterprise-grade web and mobile applications. Proven track record in designing scalable system architectures and leading technical implementations for complex platforms serving millions of users.",
   skills: ["Next.js", "TypeScript", "Node.js", "React", "WebSocket", "MongoDB", "Redux", "Three.js", "Git", "Java", "AWS", "JavaScript", "Angular", "Bootstrap", "React Native", "JQuery", "PHP", "CodeIgniter", "Laravel", "MySQL"],
@@ -154,8 +154,8 @@ export const PROJECTS = [
     image: "/projects/allarrest.png",
     technologies: ["PHP", "Laravel", "MySQL", "HTML", "CSS", "JavaScript", "Bootstrap", "JQuery", "SVN (Rabbit)"],
     timeline: "2025 - Present"
-  }, 
-   {
+  },
+  {
     id: 12,
     title: "Sanjukta Portal",
     description: "An integrated single sign-on platform developed to unify multiple police applications under a centralized dashboard.",
@@ -167,15 +167,54 @@ export const PROJECTS = [
     technologies: ["Next.js", "TypeScript", "Java", "Spring Boot", "Redux", "Git", "ShadCN", "MySQL"],
     timeline: "2025 - Present"
   },
+  {
+    id: 13,
+    title: "Unified Common Admission Portal",
+    description: "The official centralized platform for admission to Polytechnic & ITI courses. Empowering youth through technical skill development. Building a skilled workforce for the future.",
+    detailed_description: "The Unified Common Admission Portal is the official centralized digital platform for admissions into Polytechnic and ITI institutions across West Bengal. Developed for the Department of Technical Education, Government of West Bengal, this platform streamlines and modernizes the entire admission lifecycle — from application submission to final enrollment. Designed with scalability, security, and accessibility at its core, the portal empowers thousands of students by providing a transparent, efficient, and user-friendly admission experience.",
+    company: "Vyoma Innovus Global Pvt. Ltd.",
+    client: "Department of Technical Education (Govt. of WB)",
+    link: "https://admission-tetsd.wb.gov.in/",
+    image: "/projects/unified_admission.png",
+    technologies: ["Next.js", "TypeScript", "Java", "Spring Boot", "Git-Actions", "Git", "ShadCN", "PostgreSQL"],
+    timeline: "2026 - Present"
+  },
 ];
 
 export const EXPERIENCE = [
   {
     id: 1,
     type: "Currently Serving",
+    company: "NexIntel Synergy Pvt. Ltd.",
+    role: "Senior Software Developer & DevOps Engineer",
+    duration: "2026 - Present",
+    site: "https://www.nexintel.co.in/",
+    description: "Architecting and delivering scalable full-stack web and mobile applications using Next.js, React.js, React Native, and Node.js (TypeScript). Designing robust backend systems with NestJS, Express.js, and Spring Boot, while implementing RESTful and GraphQL APIs. Leading CI/CD automation, containerization with Docker, and orchestration using Kubernetes. Managing cloud-native deployments on AWS with infrastructure as code (Terraform) and optimizing performance, security, and observability using modern DevOps practices. Mentoring developers and driving clean architecture, code quality, and agile best practices across teams.",
+    skills: [
+      "Next.js",
+      "React.js",
+      "React Native",
+      "Node.js",
+      "TypeScript",
+      "Express.js",
+      "Fastify",
+      "Prisma",
+      "PostgreshQL",
+      "Docker",
+      "Kubernetes",
+      "AWS",
+      "Git & GitHub",
+      "Socket.io",
+      "CI/CD",
+      "Microservices Architecture"
+    ]
+  },
+  {
+    id: 2,
+    type: "Served",
     company: "Vyoma Innovus Global Pvt. Ltd.",
     role: "Senior Software Developer",
-    duration: "2023 - Present",
+    duration: "2023 - 2025",
     site: "https://www.vyomainnovusglobal.com/",
     description:
       "Designing and developing scalable web and mobile applications using Next.js, React.js, React Native, and Node.js. Leading feature development, API integrations, and backend services with Express.js, Spring Boot, and PHP. Actively involved in performance optimization, cloud deployment on AWS, and mentoring junior developers to ensure clean architecture and maintainable codebases.",
@@ -192,7 +231,7 @@ export const EXPERIENCE = [
     ]
   },
   {
-    id: 2,
+    id: 3,
     type: "Internship",
     company: "Anudip Foundations (Dunlop, Kolkata)",
     role: "Full Stack Intern",
@@ -210,7 +249,7 @@ export const EXPERIENCE = [
     ]
   },
   {
-    id: 3,
+    id: 4,
     type: "Training",
     company: "Anudip (Kolkata Branch)",
     role: "Advanced Java & Data Structure Trainee",
@@ -242,9 +281,9 @@ export const ACHIEVEMENTS = [
     image: "/yatri_suvidha_feature.jpeg",
     tag: "Press Featured",
     gallery: [
-      "/gallery/yatri_suvidha/img_1.jpeg", 
+      "/gallery/yatri_suvidha/img_1.jpeg",
       "/gallery/yatri_suvidha/img_2.png",
-      "/gallery/yatri_suvidha/img_3.png", 
+      "/gallery/yatri_suvidha/img_3.png",
       "/gallery/yatri_suvidha/img_4.png",
       "/gallery/yatri_suvidha/img_5.png",
       "/gallery/yatri_suvidha/img_6.png",
@@ -268,7 +307,7 @@ export const ACHIEVEMENTS = [
     image: "/passport_verification_2.png",
     tag: "State Gov-Tech",
     gallery: [
-      "/gallery/passport/img_1.png", 
+      "/gallery/passport/img_1.png",
       "/gallery/passport/img_2.png",
       "/passport_verification_2.png"
     ],
@@ -309,7 +348,7 @@ export const ACHIEVEMENTS = [
     detailedStory: "Developed for the Kolkata Police to manage millions of visitors during Durga Puja. The app features real-time pandal crowd updates, emergency SOS buttons, and GPS-based route maps. It maintained 99.9% uptime during the 5-day peak period with over 50k active users.",
     image: "/gallery/puja_bondhu/img_1.png",
     gallery: ["/puja_bandhu.png", "/gallery/puja_bondhu/img_1.png"],
-    tag: "Featured in Times of India", 
+    tag: "Featured in Times of India",
     links: [
       { type: "playstore", url: "https://play.google.com/store/apps/details?id=com.indranilvyoma.boltexponativewind&hl=en-US", label: "Download App" },
       { type: "news", url: "https://timesofindia.indiatimes.com/city/kolkata/kolkata-police-app-to-spot-pandals-help-navigate-roads-during-puja/articleshow/124005226.cms", label: "The Time of India" },
