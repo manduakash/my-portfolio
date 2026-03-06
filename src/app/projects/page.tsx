@@ -1,6 +1,6 @@
 "use client"
 import Background from "@/components/Background";
-import { PROJECTS } from "@/data/mock";
+import { PROJECTS } from "@/data/mock(copy)";
 import Link from "next/link";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";

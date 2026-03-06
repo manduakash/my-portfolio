@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Compass, Cpu, Palette, Utensils, Music, Dumbbell } from "lucide-react";
-import { HOBBIES } from "@/data/mock";
+import { HOBBIES } from "@/data/mock(copy)";
 
 const ICON_MAP: Record<string, React.ElementType> = {
     tech: Cpu,

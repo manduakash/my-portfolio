@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { ACHIEVEMENTS } from "@/data/mock";
+import { ACHIEVEMENTS } from "@/data/mock(copy)";
 import { GraduationCap, Map, ShieldCheck, Zap, Trophy, Calendar, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
