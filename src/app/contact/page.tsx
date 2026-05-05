@@ -1,6 +1,6 @@
 "use client"
 import Background from "@/components/Background";
-import { PROFILE } from "@/data/mock(copy)";
+import { PROFILE } from "@/data/mock";
 import Link from "next/link";
 import { ArrowLeft, CheckCheck, Copy, Github, Instagram, Linkedin, Mail, MapPin } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";

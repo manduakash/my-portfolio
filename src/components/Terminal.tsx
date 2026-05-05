@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { PROFILE, PROJECTS } from "@/data/mock(copy)";
+import { PROFILE, PROJECTS } from "@/data/mock";
 import { Copy, Dice1, LaptopMinimal, Maximize2, Minus, Square, X } from "lucide-react";
 import { Button } from "./ui/button";
 import { GoDotFill } from "react-icons/go";

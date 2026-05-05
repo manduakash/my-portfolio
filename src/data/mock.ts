@@ -1,7 +1,7 @@
 export const PROFILE = {
   name: "Akash Singh",
   role: "Senior Software Developer",
-  company: "NexIntel Synergy Pvt. Ltd.",
+  company: "Vyoma Innovus Global Pvt. Ltd.",
   experience: "4 Years",
   bio: "Results-driven Senior Developer with over 4 years of experience in building enterprise-grade web and mobile applications. Proven track record in designing scalable system architectures and leading technical implementations for complex platforms serving millions of users.",
   skills: ["Next.js", "TypeScript", "Node.js", "React", "WebSocket", "MongoDB", "Redux", "Three.js", "Git", "Java", "AWS", "JavaScript", "Angular", "Bootstrap", "React Native", "JQuery", "PHP", "CodeIgniter", "Laravel", "MySQL"],
@@ -171,7 +171,7 @@ export const PROJECTS = [
     id: 13,
     title: "Unified Common Admission Portal",
     description: "The official centralized platform for admission to Polytechnic & ITI courses. Empowering youth through technical skill development. Building a skilled workforce for the future.",
-    detailed_description: "The Unified Common Admission Portal is the official centralized digital platform for admissions into Polytechnic and ITI institutions across West Bengal. Developed for the Department of Technical Education, Government of West Bengal, this platform streamlines and modernizes the entire admission lifecycle — from application submission to final enrollment. Designed with scalability, security, and accessibility at its core, the portal empowers thousands of students by providing a transparent, efficient, and user-friendly admission experience.",
+    detailed_description: "The Unified Common Admission Portal is the official centralized digital platform for admissions into Polytechnic and ITI institutions across West Bengal. Developed for the Department of Technical Education, Government of West Bengal, this platform streamlines and modernizes the entire admission lifecycle — from application submission to final enrollment. Designed with scalability, security, and accessibility at its core, the portal empowers thousands of students by providing a transparent, efficient, and user- friendly admission experience.",
     company: "Vyoma Innovus Global Pvt. Ltd.",
     client: "Department of Technical Education (Govt. of WB)",
     link: "https://admission-tetsd.wb.gov.in/",
@@ -185,39 +185,11 @@ export const EXPERIENCE = [
   {
     id: 1,
     type: "Currently Serving",
-    company: "NexIntel Synergy Pvt. Ltd.",
-    role: "Senior Software Developer & DevOps Engineer",
-    duration: "2026 - Present",
-    site: "https://www.nexintel.co.in/",
-    description: "Architecting and delivering scalable full-stack web and mobile applications using Next.js, React.js, React Native, and Node.js (TypeScript). Designing robust backend systems with NestJS, Express.js, and Spring Boot, while implementing RESTful and GraphQL APIs. Leading CI/CD automation, containerization with Docker, and orchestration using Kubernetes. Managing cloud-native deployments on AWS with infrastructure as code (Terraform) and optimizing performance, security, and observability using modern DevOps practices. Mentoring developers and driving clean architecture, code quality, and agile best practices across teams.",
-    skills: [
-      "Next.js",
-      "React.js",
-      "React Native",
-      "Node.js",
-      "TypeScript",
-      "Express.js",
-      "Fastify",
-      "Prisma",
-      "PostgreshQL",
-      "Docker",
-      "Kubernetes",
-      "AWS",
-      "Git & GitHub",
-      "Socket.io",
-      "CI/CD",
-      "Microservices Architecture"
-    ]
-  },
-  {
-    id: 2,
-    type: "Served",
     company: "Vyoma Innovus Global Pvt. Ltd.",
     role: "Senior Software Developer",
-    duration: "2023 - 2025",
+    duration: "2023 - Present",
     site: "https://www.vyomainnovusglobal.com/",
-    description:
-      "Designing and developing scalable web and mobile applications using Next.js, React.js, React Native, and Node.js. Leading feature development, API integrations, and backend services with Express.js, Spring Boot, and PHP. Actively involved in performance optimization, cloud deployment on AWS, and mentoring junior developers to ensure clean architecture and maintainable codebases.",
+    description: "Designing and developing scalable web and mobile applications using Next.js, React.js, React Native, and Node.js. Leading feature development, API integrations, and backend services with Express.js, Spring Boot, and PHP. Actively involved in performance optimization, cloud deployment on AWS, and mentoring junior developers to ensure clean architecture and maintainable codebases.",
     skills: [
       "Next.js",
       "Node.js",
@@ -231,7 +203,7 @@ export const EXPERIENCE = [
     ]
   },
   {
-    id: 3,
+    id: 2,
     type: "Internship",
     company: "Anudip Foundations (Dunlop, Kolkata)",
     role: "Full Stack Intern",
@@ -249,7 +221,7 @@ export const EXPERIENCE = [
     ]
   },
   {
-    id: 4,
+    id: 3,
     type: "Training",
     company: "Anudip (Kolkata Branch)",
     role: "Advanced Java & Data Structure Trainee",

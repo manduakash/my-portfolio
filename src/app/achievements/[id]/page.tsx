@@ -7,7 +7,7 @@ import {
     Twitter, Facebook, Smartphone, Newspaper,
     CheckCircle2, ImageIcon
 } from "lucide-react";
-import { ACHIEVEMENTS } from "@/data/mock(copy)";
+import { ACHIEVEMENTS } from "@/data/mock";
 
 // Helper to get Icon and Color based on link type
 const getLinkStyles = (type: string) => {
