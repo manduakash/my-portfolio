@@ -11,7 +11,7 @@ import {
 } from "@react-three/drei";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
 import * as THREE from "three";
-import { PROFILE } from "@/data/mock";
+import { PROFILE } from "@/data/mock(copy)";
 
 // --- 1. The Emitting Amber Sun (The Center) ---
 function Sun() {

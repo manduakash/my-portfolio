@@ -6,7 +6,7 @@ import { ArrowLeft, ExternalLink, Globe, User, Calendar, CheckCircle } from "luc
 import Link from "next/link";
 
 // Import your shared data and components
-import { PROJECTS } from "@/data/mock";
+import { PROJECTS } from "@/data/mock(copy)";
 
 // Re-using your Background component for consistency
 const Background = () => (
