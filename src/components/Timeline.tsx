@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { EXPERIENCE } from "@/data/mock(copy)";
+import { EXPERIENCE } from "@/data/mock";
 import { Briefcase, GraduationCap, Award, Calendar, DotIcon, ClockFading, ExternalLink } from "lucide-react";
 import { RiRadioButtonLine } from "react-icons/ri";
 import { GoDotFill } from "react-icons/go";

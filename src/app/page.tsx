@@ -6,7 +6,7 @@ import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa";
 
 // Data Imports
-import { PROFILE, PROJECTS } from "@/data/mock(copy)";
+import { PROFILE, PROJECTS } from "@/data/mock";
 import Terminal from "@/components/Terminal";
 import Timeline from "@/components/Timeline";
 import TechOrbit from "@/components/TechOrbit";

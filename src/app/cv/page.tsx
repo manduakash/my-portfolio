@@ -8,7 +8,7 @@ import {
     ExternalLinkIcon,
     Cpu, Palette, Plane, ChefHat, Music, Dumbbell, Sparkles
 } from "lucide-react";
-import { PROFILE, PROJECTS, EXPERIENCE, ACHIEVEMENTS, HOBBIES } from "@/data/mock(copy)";
+import { PROFILE, PROJECTS, EXPERIENCE, ACHIEVEMENTS, HOBBIES } from "@/data/mock";
 import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa";
 
