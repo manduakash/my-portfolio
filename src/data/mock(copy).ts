@@ -179,6 +179,18 @@ export const PROJECTS = [
     technologies: ["Next.js", "TypeScript", "Java", "Spring Boot", "Git-Actions", "Git", "ShadCN", "PostgreSQL"],
     timeline: "2026 - Present"
   },
+  {
+    id: 14,
+    title: "ANNUAL MAINTENANCE, REPAIR & OPERATION (AMRO) MANAGEMENT SYSTEM",
+    description: "Integrated platform to streamline and manage day-to-day Maintenance, Repairs & Operation activities, work orders, contractor's performance across Jawahar Navodaya Vidyalayas.",
+    detailed_description: "AMRO Management System is an integrated platform for managing maintenance, repair, and operational activities across Jawahar Navodaya Vidyalayas. It enables end-to-end work order creation, assignment, tracking, and closure for efficient maintenance management. The system supports preventive maintenance scheduling and real-time monitoring of ongoing activities. It provides contractor performance tracking along with budget and expenditure management. Interactive dashboards and MIS reports deliver actionable insights for improved decision-making, accountability, and operational efficiency.",
+    company: "Nexintel Pvt. Ltd.",
+    client: "Jawahar Navodaya Vidyalayas",
+    link: "https://nvsamro.com/",
+    image: "/projects/nvsamro.png",
+    technologies: ["Next.js", "TypeScript", "Java", "Spring Boot", "Git-Actions", "Git", "ShadCN", "PostgreSQL"],
+    timeline: "2026 - Present"
+  },
 ];
 
 export const EXPERIENCE = [
