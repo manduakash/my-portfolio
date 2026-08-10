@@ -191,6 +191,18 @@ export const PROJECTS = [
     technologies: ["Next.js", "TypeScript", "Prisma", "Fastify", "JWT", "Git", "ShadCN", "MySQL", "AWS"],
     timeline: "2026 - Present"
   },
+   {
+    id: 15,
+    title: "Smart Solid Waste Management System",
+    description: "The Smart Waste Management System is an initiative aimed to convert 'waste to wealth' so as to trek towards the path of sustainable green development, circular economy and clean & green Jalpaiguri.",
+    detailed_description: "The Smart Waste Management System is an initiative aimed to convert 'waste to wealth' so as to trek towards the path of sustainable green development, circular economy and clean & green Jalpaiguri. The project is developed for the Jalpaiguri Municipality Corporation with the vision to transform the traditional waste management system into a modern, efficient, and sustainable one. The system enables citizens to report waste-related issues, track waste collection, and receive timely updates. It also provides municipality officials with real-time data on waste generation, collection, and disposal, enabling them to make informed decisions and optimize operations. The platform integrates IoT devices, mobile applications, and web-based dashboards to create a seamless waste management ecosystem.",
+    company: "Nexintel Synergy Pvt. Ltd.",
+    client: "Jalpaiguri Municipality Corporation",
+    link: "https://www.sswm.in/",
+    image: "/projects/sswm.png",
+    technologies: ["Next.js", "TypeScript", "Express.js", "JWT", "Git", "ShadCN", "MySQL", "AWS"],
+    timeline: "2024 - Present"
+  },
 ];
 
 export const EXPERIENCE = [
