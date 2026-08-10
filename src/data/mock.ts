@@ -42,7 +42,7 @@ export const PROJECTS = [
     detailed_description: "The Passport Verification system provides a centralized and secure platform for police authorities to process passport verification requests. It enables seamless coordination between police stations and supervisory offices, supports real-time status updates, and ensures strict data confidentiality while improving verification accuracy and processing timelines.",
     client: "STF (Special Task Force) & Department of IT",
     company: "Vyoma Innovus Global Pvt. Ltd.",
-    link: "https://wbpassportverify.link/",
+    link: "https://wbstfpassportverify.link/",
     image: "/gallery/passport/img_2.png",
     technologies: ["Next.js", "TypeScript", "Node.js", "Redis", "Redux", "Git", "AWS (S3 & EC2)", "ShadCN", "MySQL"],
     timeline: "2025 - Present"
@@ -337,7 +337,7 @@ export const ACHIEVEMENTS = [
     ],
     videoUrl: "/gallery/passport/video_1.mp4",
     links: [
-      { type: "web", url: "https://wbpassportverify.link/", label: "WB Police Link" }
+      { type: "web", url: "https://wbstfpassportverify.link/", label: "WB Police Link" }
     ],
     stats: { label: "Police Stations", value: "400+" }
   },
