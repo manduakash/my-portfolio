@@ -1,9 +1,9 @@
 export const PROFILE = {
   name: "Akash Singh",
-  role: "Senior Software Developer",
+  role: "Full Stack Developer",
   company: "NexIntel Synergy Pvt. Ltd.",
   experience: "4 Years",
-  bio: "Results-driven Senior Developer with over 4 years of experience in building enterprise-grade web and mobile applications. Proven track record in designing scalable system architectures and leading technical implementations for complex platforms serving millions of users.",
+  bio: "Results-driven Full Stack Developer with over 4 years of experience in building enterprise-grade web and mobile applications. Proven track record in designing scalable system architectures and leading technical implementations for complex platforms serving millions of users.",
   skills: ["Next.js", "TypeScript", "Node.js", "React", "WebSocket", "MongoDB", "Redux", "Three.js", "Git", "Java", "AWS", "JavaScript", "Angular", "Bootstrap", "React Native", "JQuery", "PHP", "CodeIgniter", "Laravel", "MySQL"],
   email: "manduakash@gmail.com",
   phone: "6202734737",
@@ -179,7 +179,7 @@ export const PROJECTS = [
     technologies: ["Next.js", "TypeScript", "Java", "Spring Boot", "Git-Actions", "Git", "ShadCN", "PostgreSQL"],
     timeline: "2026 - Present"
   },
-   {
+  {
     id: 14,
     title: "ANNUAL MAINTENANCE, REPAIR & OPERATION (AMRO) MANAGEMENT SYSTEM",
     description: "Integrated platform to streamline and manage day-to-day Maintenance, Repairs & Operation activities, work orders, contractor's performance across Jawahar Navodaya Vidyalayas.",
@@ -191,7 +191,7 @@ export const PROJECTS = [
     technologies: ["Next.js", "TypeScript", "Prisma", "Fastify", "JWT", "Git", "ShadCN", "MySQL", "AWS"],
     timeline: "2026 - Present"
   },
-   {
+  {
     id: 15,
     title: "Smart Solid Waste Management System",
     description: "The Smart Waste Management System is an initiative aimed to convert 'waste to wealth' so as to trek towards the path of sustainable green development, circular economy and clean & green Jalpaiguri.",
@@ -210,7 +210,7 @@ export const EXPERIENCE = [
     id: 1,
     type: "Currently Serving",
     company: "NexIntel Synergy Pvt. Ltd.",
-    role: "Senior Software Developer & DevOps Engineer",
+    role: "Full Stack Developer",
     duration: "2026 - Present",
     site: "https://www.nexintel.co.in/",
     description: "Architecting and delivering scalable full-stack web and mobile applications using Next.js, React.js, React Native, and Node.js (TypeScript). Designing robust backend systems with NestJS, Express.js, and Spring Boot, while implementing RESTful and GraphQL APIs. Leading CI/CD automation, containerization with Docker, and orchestration using Kubernetes. Managing cloud-native deployments on AWS with infrastructure as code (Terraform) and optimizing performance, security, and observability using modern DevOps practices. Mentoring developers and driving clean architecture, code quality, and agile best practices across teams.",
@@ -237,7 +237,7 @@ export const EXPERIENCE = [
     id: 2,
     type: "Served",
     company: "Vyoma Innovus Global Pvt. Ltd.",
-    role: "Senior Software Developer",
+    role: "Full Stack Developer",
     duration: "2023 - 2025",
     site: "https://www.vyomainnovusglobal.com/",
     description:
