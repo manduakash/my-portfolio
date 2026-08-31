@@ -83,11 +83,11 @@ function TechPlanet({ name, distance, speed, offset }: any) {
                 <Billboard position={[0, 0, 0]}>
                     <Html center>
                         <div className="flex flex-col items-center group cursor-pointer select-none">
-                            <div className="w-10 h-10 p-2 bg-white/20 backdrop-blur-md rounded-full border border-amber-500/30 flex items-center justify-center transition-all duration-300 group-hover:scale-125 group-hover:border-amber-400 group-hover:shadow-[0_0_20px_rgba(251,191,36,0.5)]">
+                            <div className={`${isMobile ? 'w-8 h-8' : 'w-10 h-10'} p-2 bg-white/20 backdrop-blur-md rounded-full border border-amber-500/30 flex items-center justify-center transition-all duration-300 group-hover:scale-125 group-hover:border-amber-400 group-hover:shadow-[0_0_20px_rgba(251,191,36,0.5)]`}>
                                 <img
                                     src={`https://api.iconify.design/logos:${name.toLowerCase().replace('.', '')}.svg`}
                                     alt={name}
-                                    className="w-6 h-6 object-contain brightness-125"
+                                    className={`${isMobile ? 'w-6 h-6' : 'w-6 h-6'} object-contain brightness-125`}
                                     onError={(e: any) => e.target.src = 'https://api.iconify.design/lucide:code.svg?color=%23fbbf24'}
                                 />
                             </div>
