@@ -73,6 +73,8 @@ function TechPlanet({ name, distance, speed, offset }: any) {
         planetRef.current.position.y = Math.sin(t * 0.4) * 0.3; // Slight bobbing
     });
 
+    const isMobile = useIsMobile();
+
     return (
         <group ref={planetRef}>
             <Float speed={2} rotationIntensity={0.5} floatIntensity={0.5}>
@@ -213,10 +215,10 @@ export default function TechOrbit() {
     const isMobile = useIsMobile();
 
     return (
-        <div style={{ height: isMobile ? 380 : 750, touchAction: "pan-y" }}>
+        <div style={{ height: isMobile ? 580 : 750, touchAction: "pan-y" }}>
             <Canvas
-                camera={{ position: isMobile ? [30, 14, 42] : [18, 8, 25], fov: isMobile ? 42 : 30 }}
-                dpr={isMobile ? [1, 1.5] : [1, 2]}
+                camera={{ position: isMobile ? [18, 8, 35] : [18, 8, 25], fov: isMobile ? 25 : 30 }}
+                dpr={isMobile ? [1, 2] : [1, 2]}
             >
                 <color attach="background" args={["#030712"]} />
                 <ambientLight intensity={0.5} />
