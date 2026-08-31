@@ -428,12 +428,12 @@ export const HOBBIES = [
     description: "Maintaining physical fitness and discipline through regular workouts and training.",
     image: "/hobbies/gym.jpg"
   },
-  {
-    title: "Cooking",
-    icon: "cooking",
-    description: "Experimenting with recipes and flavors to create enjoyable homemade meals.",
-    image: "/hobbies/cooking.jpg"
-  },
+  // {
+  //   title: "Cooking",
+  //   icon: "cooking",
+  //   description: "Experimenting with recipes and flavors to create enjoyable homemade meals.",
+  //   image: "/hobbies/cooking.jpg"
+  // },
 ];
 
 
