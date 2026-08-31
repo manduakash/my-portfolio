@@ -12,6 +12,7 @@ import {
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
 import * as THREE from "three";
 import { PROFILE } from "@/data/mock";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 // --- 1. The Emitting Amber Sun (The Center) ---
 function Sun() {
@@ -209,11 +210,13 @@ export default function TechOrbit() {
     }, [groupedPlanets]);
 
 
+    const isMobile = useIsMobile();
+
     return (
-        <div className="w-full h-[750px] relative bg-[#030712] overflow-hidden">
+        <div style={{ height: isMobile ? 380 : 750, touchAction: "pan-y" }}>
             <Canvas
-                camera={{ position: [18, 8, 25], fov: 30 }}
-                gl={{ powerPreference: "high-performance", antialias: false }}
+                camera={{ position: isMobile ? [30, 14, 42] : [18, 8, 25], fov: isMobile ? 42 : 30 }}
+                dpr={isMobile ? [1, 1.5] : [1, 2]}
             >
                 <color attach="background" args={["#030712"]} />
                 <ambientLight intensity={0.5} />
