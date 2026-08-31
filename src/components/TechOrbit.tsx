@@ -104,13 +104,15 @@ function TechPlanet({ name, distance, speed, offset }: any) {
 
 export function BloomController() {
 
+    const isMobile = useIsMobile();
     return (
-        <Bloom
-            luminanceThreshold={0.1}
-            mipmapBlur
-            intensity={3.5}
-            radius={0.55}
-        />
+        // <Bloom
+        //     luminanceThreshold={0.1}
+        //     mipmapBlur
+        //     intensity={3.5}
+        //     radius={0.6}
+        // />
+        <Bloom luminanceThreshold={0.1} mipmapBlur={!isMobile} intensity={isMobile ? 2 : 3.5} radius={0.6} />
     );
 }
 
@@ -213,12 +215,19 @@ export default function TechOrbit() {
 
 
     const isMobile = useIsMobile();
+    const cameraNear = isMobile ? 5 : 0.1;
+    const cameraFar = isMobile ? 80 : 1000;
 
     return (
         <div className="w-full h-[750px] relative bg-[#030712] overflow-hidden" style={{ touchAction: "pan-y" }}>
             <Canvas
-                camera={{ position: isMobile ? [18, 8, 25] : [18, 8, 25], fov: isMobile ? 30 : 30 }}
-                dpr={isMobile ? [1, 2] : [1, 2]}
+                camera={{ position: [18, 8, 25], fov: 30, near: cameraNear, far: cameraFar }}
+                gl={{
+                    powerPreference: "high-performance",
+                    antialias: false,
+                    precision: "highp",          // force high-precision depth on mobile GPUs
+                    logarithmicDepthBuffer: true, // spreads depth precision more evenly
+                }}
             >
                 <color attach="background" args={["#030712"]} />
                 <ambientLight intensity={0.5} />
