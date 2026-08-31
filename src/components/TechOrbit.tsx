@@ -112,7 +112,7 @@ export function BloomController() {
         //     intensity={3.5}
         //     radius={0.6}
         // />
-        <Bloom luminanceThreshold={0.1} mipmapBlur={!isMobile} intensity={isMobile ? 2 : 3.5} radius={0.6} />
+        <Bloom mipmapBlur={!isMobile} intensity={isMobile ? 2 : 3.5} radius={0.5} />
     );
 }
 
