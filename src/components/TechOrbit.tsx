@@ -215,7 +215,7 @@ export default function TechOrbit() {
     const isMobile = useIsMobile();
 
     return (
-        <div style={{ height: isMobile ? 580 : 750, touchAction: "pan-y" }}>
+        <div style={{ height: 750, touchAction: "pan-y" }}>
             <Canvas
                 camera={{ position: isMobile ? [18, 8, 35] : [18, 8, 25], fov: isMobile ? 25 : 30 }}
                 dpr={isMobile ? [1, 2] : [1, 2]}
