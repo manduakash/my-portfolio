@@ -168,7 +168,7 @@ export default function Home() {
             </h1>
 
             <p className="text-sm sm:text-lg text-slate-400 sm:max-w-xl mb-12 leading-tight text-justify font-light">
-              Results-driven Senior Developer at <span className="text-white">{PROFILE.company}</span> with over {PROFILE.experience} of experience in building enterprise-grade web and mobile applications. Proven track record in designing scalable system architectures and leading technical implementations for complex platforms serving millions of users.
+              Results-driven Full Stack Developer at <span className="text-white">{PROFILE.company}</span> with over {PROFILE.experience} of experience in building enterprise-grade web and mobile applications. Proven track record in designing scalable system architectures and leading technical implementations for complex platforms serving millions of users.
             </p>
 
             <div className="flex flex-wrap gap-4">
