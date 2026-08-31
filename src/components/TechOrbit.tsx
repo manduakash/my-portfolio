@@ -87,7 +87,7 @@ function TechPlanet({ name, distance, speed, offset }: any) {
                                 <img
                                     src={`https://api.iconify.design/logos:${name.toLowerCase().replace('.', '')}.svg`}
                                     alt={name}
-                                    className={`${isMobile ? 'w-6 h-6' : 'w-6 h-6'} object-contain brightness-125`}
+                                    className={`${isMobile ? 'w-6 h-6' : 'w-8 h-8'} object-contain brightness-125`}
                                     onError={(e: any) => e.target.src = 'https://api.iconify.design/lucide:code.svg?color=%23fbbf24'}
                                 />
                             </div>
