@@ -3,7 +3,7 @@ export const PROFILE = {
   role: "Full Stack Developer",
   company: "NexIntel Synergy Pvt. Ltd.",
   experience: "3 Years",
-  bio: "Results-driven Full Stack Developer with over 3 years of experience in building enterprise-grade web and mobile applications. Proven track record in designing scalable system architectures and leading technical implementations for complex platforms serving millions of users.",
+  bio: "Full Stack Developer with 3+ years building enterprise-grade web and mobile apps using Next.js, TypeScript, and Node.js. Proven track record architecting scalable systems for government platforms serving millions of users across West Bengal.",
   skills: ["Next.js", "TypeScript", "Node.js", "React", "WebSocket", "MongoDB", "Redux", "Three.js", "Git", "Java", "AWS", "JavaScript", "Angular", "Bootstrap", "React Native", "JQuery", "PHP", "CodeIgniter", "Laravel", "MySQL", "Python", "FastAPI", "Docker", "PostgreSQL", "Redis", "Supabase"],
   email: "manduakash@gmail.com",
   phone: "6202734737",
