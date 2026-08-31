@@ -241,7 +241,7 @@ export default function TechOrbit() {
                     </EffectComposer>
                 </Suspense>
 
-                <OrbitControls enableZoom={false} enablePan={false} rotateSpeed={0.3} />
+                <OrbitControls enableZoom={false} enablePan={false} enableRotate={false} rotateSpeed={0.3} />
             </Canvas>
 
             {/* Static UI Overlay */}
