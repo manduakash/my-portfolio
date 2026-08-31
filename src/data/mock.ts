@@ -212,7 +212,7 @@ export const EXPERIENCE = [
     company: "NexIntel Synergy Pvt. Ltd.",
     role: "Full Stack Developer",
     duration: "2026 - Present",
-    site: "https://www.nexintel.co.in/",
+    site: "https://nexintel.co.in",
     description: "Architecting and delivering scalable full-stack web and mobile applications using Next.js, React.js, React Native, and Node.js (TypeScript). Designing robust backend systems with NestJS, Express.js, and Spring Boot, while implementing RESTful and GraphQL APIs. Leading CI/CD automation, containerization with Docker, and orchestration using Kubernetes. Managing cloud-native deployments on AWS with infrastructure as code (Terraform) and optimizing performance, security, and observability using modern DevOps practices. Mentoring developers and driving clean architecture, code quality, and agile best practices across teams.",
     skills: [
       "Next.js",
@@ -239,7 +239,7 @@ export const EXPERIENCE = [
     company: "Vyoma Innovus Global Pvt. Ltd.",
     role: "Full Stack Developer",
     duration: "2023 - 2025",
-    site: "https://www.vyomainnovusglobal.com/",
+    site: "https://vyomainnovusglobal.com",
     description:
       "Designing and developing scalable web and mobile applications using Next.js, React.js, React Native, and Node.js. Leading feature development, API integrations, and backend services with Express.js, Spring Boot, and PHP. Actively involved in performance optimization, cloud deployment on AWS, and mentoring junior developers to ensure clean architecture and maintainable codebases.",
     skills: [
