@@ -245,9 +245,6 @@ export default function Home() {
               <div className="w-2 h-2 rounded-full bg-sky-500" />
               <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Core Stack</span>
             </div>
-            <div className="flex items-center gap-2 text-slate-500">
-              <span className="text-[10px] font-bold uppercase tracking-widest">[ Drag to Rotate ]</span>
-            </div>
           </div>
         </div>
         {/* List of all skills */}

@@ -109,7 +109,7 @@ export function BloomController() {
             luminanceThreshold={0.1}
             mipmapBlur
             intensity={3.5}
-            radius={0.45}
+            radius={0.55}
         />
     );
 }
@@ -124,7 +124,7 @@ function SolarFlares({ count = 10 }) {
             baseLength: 0.08 + Math.random() * 1.5,
             speed: 0.1 + Math.random() * 1,
             phase: Math.random() * Math.PI,
-            thickness: 0.3 + Math.random() * 0.05,
+            thickness: 0.1 + Math.random() * 0.05,
         }));
     }, [count]);
 
